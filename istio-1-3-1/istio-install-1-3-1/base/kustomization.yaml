@@ -9,21 +9,21 @@ configMapGenerator:
 images:
 - name: docker.io/prom/prometheus
   newTag: v2.8.0
-- name: gcr.io/istio-release/citadel
+- name: grc.azk8s.cn/istio-release/citadel
   newTag: release-1.3-latest-daily
-- name: gcr.io/istio-release/galley
+- name: grc.azk8s.cn/istio-release/galley
   newTag: release-1.3-latest-daily
-- name: gcr.io/istio-release/kubectl
+- name: grc.azk8s.cn/istio-release/kubectl
   newTag: release-1.3-latest-daily
-- name: gcr.io/istio-release/mixer
+- name: grc.azk8s.cn/istio-release/mixer
   newTag: release-1.3-latest-daily
-- name: gcr.io/istio-release/node-agent-k8s
+- name: grc.azk8s.cn/istio-release/node-agent-k8s
   newTag: release-1.3-latest-daily
-- name: gcr.io/istio-release/pilot
+- name: grc.azk8s.cn/istio-release/pilot
   newTag: release-1.3-latest-daily
-- name: gcr.io/istio-release/proxyv2
+- name: grc.azk8s.cn/istio-release/proxyv2
   newTag: release-1.3-latest-daily
-- name: gcr.io/istio-release/sidecar_injector
+- name: grc.azk8s.cn/istio-release/sidecar_injector
   newTag: release-1.3-latest-daily
 
 resources:

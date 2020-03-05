@@ -5,6 +5,6 @@ bases:
 patchesStrategicMerge:
 - stateful-set.yaml
 images:
-- name: gcr.io/$(project)/application-controller
-  newName: gcr.io/$(project)/application-controller
+- name: grc.azk8s.cn/$(project)/application-controller
+  newName: grc.azk8s.cn/$(project)/application-controller
   newTag: latest

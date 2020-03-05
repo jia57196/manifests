@@ -15,7 +15,7 @@ spec:
         app: centraldashboard
     spec:
       containers:
-      - image: gcr.io/kubeflow-images-public/centraldashboard
+      - image: grc.azk8s.cn/kubeflow-images-public/centraldashboard
         imagePullPolicy: IfNotPresent
         livenessProbe:
           httpGet:

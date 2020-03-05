@@ -20,6 +20,6 @@ vars:
 configurations:
 - params.yaml
 images:
-- name: gcr.io/$(project)/profile-controller
-  newName: gcr.io/$(project)/profile-controller
+- name: grc.azk8s.cn/$(project)/profile-controller
+  newName: grc.azk8s.cn/$(project)/profile-controller
   newTag: latest

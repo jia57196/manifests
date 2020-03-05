@@ -158,7 +158,7 @@ spec:
   template:
     spec:
       containers:
-      - image: gcr.io/kubeflow-images-public/admission-webhook:v20190520-v0-139-gcee39dbc-dirty-0d8f4c
+      - image: grc.azk8s.cn/kubeflow-images-public/admission-webhook:v20190520-v0-139-gcee39dbc-dirty-0d8f4c
         name: admission-webhook
         volumeMounts:
         - mountPath: /etc/webhook/certs
@@ -290,8 +290,8 @@ commonLabels:
   kustomize.component: admission-webhook
 namePrefix: admission-webhook-
 images:
-- name: gcr.io/kubeflow-images-public/admission-webhook
-  newName: gcr.io/kubeflow-images-public/admission-webhook
+- name: grc.azk8s.cn/kubeflow-images-public/admission-webhook
+  newName: grc.azk8s.cn/kubeflow-images-public/admission-webhook
   newTag: v1.0.0-gaf96e4e3
 namespace: kubeflow
 configMapGenerator:

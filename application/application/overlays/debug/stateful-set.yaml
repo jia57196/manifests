@@ -10,7 +10,7 @@ spec:
     spec:
       containers:
       - name: manager
-        image: gcr.io/$(project)/application-controller:latest
+        image: grc.azk8s.cn/$(project)/application-controller:latest
         command:
         - /go/bin/dlv
         args:

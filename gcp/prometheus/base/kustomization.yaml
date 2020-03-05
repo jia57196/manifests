@@ -8,8 +8,8 @@ configMapGenerator:
 - name: prometheus-parameters
   env: params.env
 images:
-- name: gcr.io/stackdriver-prometheus/stackdriver-prometheus
-  newName: gcr.io/stackdriver-prometheus/stackdriver-prometheus
+- name: grc.azk8s.cn/stackdriver-prometheus/stackdriver-prometheus
+  newName: grc.azk8s.cn/stackdriver-prometheus/stackdriver-prometheus
   newTag: release-0.4.2
 vars:
 - name: projectId

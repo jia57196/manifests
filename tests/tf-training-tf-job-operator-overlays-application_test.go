@@ -216,7 +216,7 @@ spec:
           valueFrom:
             fieldRef:
               fieldPath: metadata.name
-        image: gcr.io/kubeflow-images-public/tf_operator:kubeflow-tf-operator-postsubmit-v1-5adee6f-6109-a25c
+        image: grc.azk8s.cn/kubeflow-images-public/tf_operator:kubeflow-tf-operator-postsubmit-v1-5adee6f-6109-a25c
         name: tf-job-operator
       serviceAccountName: tf-job-operator
 `)
@@ -273,8 +273,8 @@ resources:
 commonLabels:
   kustomize.component: tf-job-operator
 images:
-- name: gcr.io/kubeflow-images-public/tf_operator
-  newName: gcr.io/kubeflow-images-public/tf_operator
+- name: grc.azk8s.cn/kubeflow-images-public/tf_operator
+  newName: grc.azk8s.cn/kubeflow-images-public/tf_operator
   newTag: v1.0.0-g92389064
 `)
 }

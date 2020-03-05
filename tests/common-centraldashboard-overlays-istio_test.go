@@ -105,7 +105,7 @@ spec:
         app: centraldashboard
     spec:
       containers:
-      - image: gcr.io/kubeflow-images-public/centraldashboard
+      - image: grc.azk8s.cn/kubeflow-images-public/centraldashboard
         imagePullPolicy: IfNotPresent
         livenessProbe:
           httpGet:
@@ -230,8 +230,8 @@ namespace: kubeflow
 commonLabels:
   kustomize.component: centraldashboard
 images:
-- name: gcr.io/kubeflow-images-public/centraldashboard
-  newName: gcr.io/kubeflow-images-public/centraldashboard
+- name: grc.azk8s.cn/kubeflow-images-public/centraldashboard
+  newName: grc.azk8s.cn/kubeflow-images-public/centraldashboard
   newTag: v1.0.0-g3ec0de71
 configMapGenerator:
 - envs:

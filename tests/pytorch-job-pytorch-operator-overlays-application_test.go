@@ -208,7 +208,7 @@ spec:
           valueFrom:
             fieldRef:
               fieldPath: metadata.name
-        image: gcr.io/kubeflow-images-public/pytorch-operator:v0.6.0-18-g5e36a57
+        image: grc.azk8s.cn/kubeflow-images-public/pytorch-operator:v0.6.0-18-g5e36a57
         name: pytorch-operator
       serviceAccountName: pytorch-operator
 `)
@@ -259,8 +259,8 @@ resources:
 commonLabels:
   kustomize.component: pytorch-operator
 images:
-- name: gcr.io/kubeflow-images-public/pytorch-operator
-  newName: gcr.io/kubeflow-images-public/pytorch-operator
+- name: grc.azk8s.cn/kubeflow-images-public/pytorch-operator
+  newName: grc.azk8s.cn/kubeflow-images-public/pytorch-operator
   newTag: v1.0.0-g047cf0f
 `)
 }

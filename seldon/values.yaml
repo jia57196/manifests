@@ -82,7 +82,7 @@ singleNamespace: false
 storageInitializer:
   cpuLimit: '1'
   cpuRequest: 100m
-  image: gcr.io/kfserving/storage-initializer:0.2.1
+  image: grc.azk8s.cn/kfserving/storage-initializer:0.2.1
   memoryLimit: 1Gi
   memoryRequest: 100Mi
 usageMetrics:

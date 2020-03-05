@@ -137,7 +137,7 @@ spec:
       - name: manager
         command:
         - /root/manager
-        image: gcr.io/kubeflow-images-public/kubernetes-sigs/application
+        image: grc.azk8s.cn/kubeflow-images-public/kubernetes-sigs/application
         imagePullPolicy: Always
         env:
         - name: project
@@ -170,8 +170,8 @@ configMapGenerator:
 generatorOptions:
   disableNameSuffixHash: true
 images:
-- name: gcr.io/kubeflow-images-public/kubernetes-sigs/application
-  newName: gcr.io/kubeflow-images-public/kubernetes-sigs/application
+- name: grc.azk8s.cn/kubeflow-images-public/kubernetes-sigs/application
+  newName: grc.azk8s.cn/kubeflow-images-public/kubernetes-sigs/application
   newTag: 1.0-beta
 vars:
 - name: project

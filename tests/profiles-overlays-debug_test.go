@@ -32,7 +32,7 @@ spec:
             configMapKeyRef:
               name: parameters
               key: project
-        image: gcr.io/$(project)/profile-controller:latest
+        image: grc.azk8s.cn/$(project)/profile-controller:latest
         ports:
         - containerPort: 2345
         securityContext:
@@ -69,8 +69,8 @@ vars:
 configurations:
 - params.yaml
 images:
-- name: gcr.io/$(project)/profile-controller
-  newName: gcr.io/$(project)/profile-controller
+- name: grc.azk8s.cn/$(project)/profile-controller
+  newName: grc.azk8s.cn/$(project)/profile-controller
   newTag: latest
 `)
 	th.writeF("/manifests/profiles/base/cluster-role-binding.yaml", `
@@ -268,7 +268,7 @@ spec:
         - $(userid-prefix)
         - "-workload-identity"
         - $(gcp-sa)
-        image: gcr.io/kubeflow-images-public/profile-controller:v20190619-v0-219-gbd3daa8c-dirty-1ced0e
+        image: grc.azk8s.cn/kubeflow-images-public/profile-controller:v20190619-v0-219-gbd3daa8c-dirty-1ced0e
         imagePullPolicy: Always
         name: manager
         livenessProbe:
@@ -286,7 +286,7 @@ spec:
         - $(userid-header)
         - "-userid-prefix"
         - $(userid-prefix)
-        image: gcr.io/kubeflow-images-public/kfam:v20190612-v0-170-ga06cdb79-dirty-a33ee4
+        image: grc.azk8s.cn/kubeflow-images-public/kfam:v20190612-v0-170-ga06cdb79-dirty-a33ee4
         imagePullPolicy: Always
         name: kfam
         livenessProbe:
@@ -350,11 +350,11 @@ configMapGenerator:
   - params.env
   name: profiles-parameters
 images:
-- name: gcr.io/kubeflow-images-public/kfam
-  newName: gcr.io/kubeflow-images-public/kfam
+- name: grc.azk8s.cn/kubeflow-images-public/kfam
+  newName: grc.azk8s.cn/kubeflow-images-public/kfam
   newTag: v1.0.0-gf3e09203
-- name: gcr.io/kubeflow-images-public/profile-controller
-  newName: gcr.io/kubeflow-images-public/profile-controller
+- name: grc.azk8s.cn/kubeflow-images-public/profile-controller
+  newName: grc.azk8s.cn/kubeflow-images-public/profile-controller
   newTag: v1.0.0-ge50a8531
 vars:
 - fieldref:

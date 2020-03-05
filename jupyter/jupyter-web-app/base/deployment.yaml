@@ -22,7 +22,7 @@ spec:
           value: $(userid-header)
         - name: USERID_PREFIX
           value: $(userid-prefix)
-        image: gcr.io/kubeflow-images-public/jupyter-web-app:v0.5.0
+        image: grc.azk8s.cn/kubeflow-images-public/jupyter-web-app:v0.5.0
         imagePullPolicy: $(policy)
         name: jupyter-web-app
         ports:

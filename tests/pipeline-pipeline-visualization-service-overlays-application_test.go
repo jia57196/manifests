@@ -79,7 +79,7 @@ spec:
         app: ml-pipeline-visualizationserver
     spec:
       containers:
-      - image: gcr.io/ml-pipeline/visualization-server
+      - image: grc.azk8s.cn/ml-pipeline/visualization-server
         imagePullPolicy: IfNotPresent
         name: ml-pipeline-visualizationserver
         ports:
@@ -109,9 +109,9 @@ resources:
 - deployment.yaml
 - service.yaml
 images:
-- name: gcr.io/ml-pipeline/visualization-server
+- name: grc.azk8s.cn/ml-pipeline/visualization-server
   newTag: 0.2.0
-  newName: gcr.io/ml-pipeline/visualization-server
+  newName: grc.azk8s.cn/ml-pipeline/visualization-server
 `)
 }
 

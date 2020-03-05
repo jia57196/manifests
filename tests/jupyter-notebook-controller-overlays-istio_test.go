@@ -253,7 +253,7 @@ spec:
     spec:
       containers:
       - name: manager
-        image: gcr.io/kubeflow-images-public/notebook-controller:v20190614-v0-160-g386f2749-e3b0c4
+        image: grc.azk8s.cn/kubeflow-images-public/notebook-controller:v20190614-v0-160-g386f2749-e3b0c4
         command:
           - /manager
         env:
@@ -306,8 +306,8 @@ commonLabels:
   app: notebook-controller
   kustomize.component: notebook-controller
 images:
-- name: gcr.io/kubeflow-images-public/notebook-controller
-  newName: gcr.io/kubeflow-images-public/notebook-controller
+- name: grc.azk8s.cn/kubeflow-images-public/notebook-controller
+  newName: grc.azk8s.cn/kubeflow-images-public/notebook-controller
   newTag: v1.0.0-gcd65ce25
 configMapGenerator:
 - envs:

@@ -65,7 +65,7 @@ spec:
           valueFrom:
             fieldRef:
               fieldPath: metadata.namespace
-        image: gcr.io/ml-pipeline/persistenceagent
+        image: grc.azk8s.cn/ml-pipeline/persistenceagent
         imagePullPolicy: IfNotPresent
       serviceAccountName: ml-pipeline-persistenceagent
 `)
@@ -87,9 +87,9 @@ resources:
 - deployment.yaml
 - service-account.yaml
 images:
-- name: gcr.io/ml-pipeline/persistenceagent
+- name: grc.azk8s.cn/ml-pipeline/persistenceagent
   newTag: 0.2.0
-  newName: gcr.io/ml-pipeline/persistenceagent
+  newName: grc.azk8s.cn/ml-pipeline/persistenceagent
 `)
 }
 

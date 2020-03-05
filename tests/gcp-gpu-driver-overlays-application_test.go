@@ -85,7 +85,7 @@ spec:
               - key: cloud.google.com/gke-accelerator
                 operator: Exists
       containers:
-      - image: gcr.io/google-containers/pause:2.0
+      - image: grc.azk8s.cn/google-containers/pause:2.0
         name: pause
       hostNetwork: true
       hostPID: true
@@ -133,8 +133,8 @@ resources:
 commonLabels:
   kustomize.component: gpu-driver
 images:
-- name: gcr.io/google-containers/pause
-  newName: gcr.io/google-containers/pause
+- name: grc.azk8s.cn/google-containers/pause
+  newName: grc.azk8s.cn/google-containers/pause
   newTag: '2.0'
 - name: cos-nvidia-installer
   newName: cos-nvidia-installer
