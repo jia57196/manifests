@@ -370,5 +370,5 @@ spec:
     name: seldon-core-operator
   repos:
   - name: manifests
-    uri: https://github.com/jia57196/manifests/archive/v1.0-azk8s.tar.gz
+    uri: https://github.com/jia57196/manifests/archive/v1.0-azk8s-rc1.tar.gz
   version: v1.0-azk8s
