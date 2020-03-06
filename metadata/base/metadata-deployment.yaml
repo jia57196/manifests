@@ -15,24 +15,23 @@ spec:
         component: server
     spec:
       containers:
-      - name: container
-        image: grc.azk8s.cn/kubeflow-images-public/metadata:v0.1.11
-        command: ["./server/server",
-                  "--http_port=8080"]
-        ports:
-        - name: backendapi
-          containerPort: 8080
+        - name: container
+          image: gcr.azk8s.cn/kubeflow-images-public/metadata:v0.1.11
+          command: ["./server/server", "--http_port=8080"]
+          ports:
+            - name: backendapi
+              containerPort: 8080
 
-        readinessProbe:
-          httpGet:
-            path: /api/v1alpha1/artifact_types
-            port: backendapi
-            httpHeaders:
-            - name: ContentType
-              value: application/json
-          initialDelaySeconds: 3
-          periodSeconds: 5
-          timeoutSeconds: 2
+          readinessProbe:
+            httpGet:
+              path: /api/v1alpha1/artifact_types
+              port: backendapi
+              httpHeaders:
+                - name: ContentType
+                  value: application/json
+            initialDelaySeconds: 3
+            periodSeconds: 5
+            timeoutSeconds: 2
 ---
 apiVersion: apps/v1
 kind: Deployment
@@ -53,9 +52,9 @@ spec:
       containers:
         - name: container
           envFrom:
-          - configMapRef:
-              name: metadata-grpc-configmap
-          image: grc.azk8s.cn/tfx-oss-public/ml_metadata_store_server:v0.21.1
+            - configMapRef:
+                name: metadata-grpc-configmap
+          image: gcr.azk8s.cn/tfx-oss-public/ml_metadata_store_server:v0.21.1
           command: ["/bin/metadata_store_server"]
           args: ["--grpc_port=$(METADATA_GRPC_SERVICE_PORT)"]
           ports:

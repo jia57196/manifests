@@ -23,21 +23,21 @@ spec:
         app.kubernetes.io/version: v1beta2-1.0.0-2.4.4
     spec:
       containers:
-      - args:
-        - -v=2
-        - -namespace=
-        - -ingress-url-format=
-        - -controller-threads=10
-        - -resync-interval=30
-        - -logtostderr
-        - -enable-metrics=true
-        - -metrics-labels=app_type
-        - -metrics-port=10254
-        - -metrics-endpoint=/metrics
-        - -metrics-prefix=
-        image: grc.azk8s.cn/spark-operator/spark-operator:v1beta2-1.0.0-2.4.4
-        imagePullPolicy: IfNotPresent
-        name: sparkoperator
-        ports:
-        - containerPort: 10254
+        - args:
+            - -v=2
+            - -namespace=
+            - -ingress-url-format=
+            - -controller-threads=10
+            - -resync-interval=30
+            - -logtostderr
+            - -enable-metrics=true
+            - -metrics-labels=app_type
+            - -metrics-port=10254
+            - -metrics-endpoint=/metrics
+            - -metrics-prefix=
+          image: gcr.azk8s.cn/spark-operator/spark-operator:v1beta2-1.0.0-2.4.4
+          imagePullPolicy: IfNotPresent
+          name: sparkoperator
+          ports:
+            - containerPort: 10254
       serviceAccountName: operator-sa

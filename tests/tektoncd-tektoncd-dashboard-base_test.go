@@ -106,7 +106,7 @@ spec:
     spec:
       containers:
       - name: tekton-dashboard
-        image: grc.azk8s.cn/tekton-nightly/dashboard@sha256:e3e63e7a5e11a14927008cf61f6e6a1bfc36e9e13608e9c044570c162198f01d
+        image: gcr.azk8s.cn/tekton-nightly/dashboard@sha256:e3e63e7a5e11a14927008cf61f6e6a1bfc36e9e13608e9c044570c162198f01d
         ports:
         - containerPort: 9097
         livenessProbe:
@@ -224,8 +224,8 @@ resources:
 - service.yaml
 namespace: tekton-pipelines
 images:
-- name: grc.azk8s.cn/tekton-nightly/dashboard
-  newName: grc.azk8s.cn/tekton-nightly/dashboard
+- name: gcr.azk8s.cn/tekton-nightly/dashboard
+  newName: gcr.azk8s.cn/tekton-nightly/dashboard
   digest: sha256:e3e63e7a5e11a14927008cf61f6e6a1bfc36e9e13608e9c044570c162198f01d
 `)
 }

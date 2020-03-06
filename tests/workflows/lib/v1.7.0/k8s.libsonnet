@@ -13495,9 +13495,9 @@
         // Describe a container image
         containerImage:: {
           new():: {},
-          // Names by which this image is known. e.g. ["grc.azk8s.cn/google_containers/hyperkube:v1.0.7", "dockerhub.io/google_containers/hyperkube:v1.0.7"]
+          // Names by which this image is known. e.g. ["gcr.azk8s.cn/google_containers/hyperkube:v1.0.7", "dockerhub.io/google_containers/hyperkube:v1.0.7"]
           withNames(names):: self + if std.type(names) == "array" then {names: names} else {names: [names]},
-          // Names by which this image is known. e.g. ["grc.azk8s.cn/google_containers/hyperkube:v1.0.7", "dockerhub.io/google_containers/hyperkube:v1.0.7"]
+          // Names by which this image is known. e.g. ["gcr.azk8s.cn/google_containers/hyperkube:v1.0.7", "dockerhub.io/google_containers/hyperkube:v1.0.7"]
           withNamesMixin(names):: self + if std.type(names) == "array" then {names+: names} else {names+: [names]},
           // The size of the image in bytes.
           withSizeBytes(sizeBytes):: self + {sizeBytes: sizeBytes},

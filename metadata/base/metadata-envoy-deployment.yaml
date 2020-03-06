@@ -15,10 +15,10 @@ spec:
         component: envoy
     spec:
       containers:
-      - name: container
-        image: grc.azk8s.cn/ml-pipeline/envoy:metadata-grpc
-        ports:
-        - name: md-envoy
-          containerPort: 9090
-        - name: envoy-admin
-          containerPort: 9901
+        - name: container
+          image: gcr.azk8s.cn/ml-pipeline/envoy:metadata-grpc
+          ports:
+            - name: md-envoy
+              containerPort: 9090
+            - name: envoy-admin
+              containerPort: 9901

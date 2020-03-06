@@ -254,7 +254,7 @@ configurations:
 - params.yaml
 images:
 - name: quay.io/coreos/dex
-  newName: grc.azk8s.cn/arrikto/dexidp/dex
+  newName: gcr.azk8s.cn/arrikto/dexidp/dex
   newTag: 4bede5eb80822fc3a7fc9edca0ed2605cd339d17
 `)
 }

@@ -16,46 +16,46 @@ spec:
         nodeAffinity:
           requiredDuringSchedulingIgnoredDuringExecution:
             nodeSelectorTerms:
-            - matchExpressions:
-              - key: cloud.google.com/gke-accelerator
-                operator: Exists
+              - matchExpressions:
+                  - key: cloud.google.com/gke-accelerator
+                    operator: Exists
       containers:
-      - image: grc.azk8s.cn/google-containers/pause:2.0
-        name: pause
+        - image: gcr.azk8s.cn/google-containers/pause:2.0
+          name: pause
       hostNetwork: true
       hostPID: true
       initContainers:
-      - env:
-        - name: NVIDIA_INSTALL_DIR_HOST
-          value: /home/kubernetes/bin/nvidia
-        - name: NVIDIA_INSTALL_DIR_CONTAINER
-          value: /usr/local/nvidia
-        - name: ROOT_MOUNT_DIR
-          value: /root
-        image: cos-nvidia-installer:fixed
-        imagePullPolicy: Never
-        name: nvidia-driver-installer
-        resources:
-          requests:
-            cpu: 0.15
-        securityContext:
-          privileged: true
-        volumeMounts:
-        - mountPath: /usr/local/nvidia
-          name: nvidia-install-dir-host
-        - mountPath: /dev
-          name: dev
-        - mountPath: /root
-          name: root-mount
+        - env:
+            - name: NVIDIA_INSTALL_DIR_HOST
+              value: /home/kubernetes/bin/nvidia
+            - name: NVIDIA_INSTALL_DIR_CONTAINER
+              value: /usr/local/nvidia
+            - name: ROOT_MOUNT_DIR
+              value: /root
+          image: cos-nvidia-installer:fixed
+          imagePullPolicy: Never
+          name: nvidia-driver-installer
+          resources:
+            requests:
+              cpu: 0.15
+          securityContext:
+            privileged: true
+          volumeMounts:
+            - mountPath: /usr/local/nvidia
+              name: nvidia-install-dir-host
+            - mountPath: /dev
+              name: dev
+            - mountPath: /root
+              name: root-mount
       tolerations:
-      - operator: Exists
+        - operator: Exists
       volumes:
-      - hostPath:
-          path: /dev
-        name: dev
-      - hostPath:
-          path: /home/kubernetes/bin/nvidia
-        name: nvidia-install-dir-host
-      - hostPath:
-          path: /
-        name: root-mount
+        - hostPath:
+            path: /dev
+          name: dev
+        - hostPath:
+            path: /home/kubernetes/bin/nvidia
+          name: nvidia-install-dir-host
+        - hostPath:
+            path: /
+          name: root-mount

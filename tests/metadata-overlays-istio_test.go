@@ -95,7 +95,7 @@ spec:
     spec:
       containers:
       - name: container
-        image: grc.azk8s.cn/kubeflow-images-public/metadata:v0.1.11
+        image: gcr.azk8s.cn/kubeflow-images-public/metadata:v0.1.11
         command: ["./server/server",
                   "--http_port=8080"]
         ports:
@@ -134,7 +134,7 @@ spec:
           envFrom:
           - configMapRef:
               name: metadata-grpc-configmap
-          image: grc.azk8s.cn/tfx-oss-public/ml_metadata_store_server:v0.21.1
+          image: gcr.azk8s.cn/tfx-oss-public/ml_metadata_store_server:v0.21.1
           command: ["/bin/metadata_store_server"]
           args: ["--grpc_port=$(METADATA_GRPC_SERVICE_PORT)"]
           ports:
@@ -190,7 +190,7 @@ spec:
         app: metadata-ui
     spec:
       containers:
-      - image: grc.azk8s.cn/kubeflow-images-public/metadata-frontend:v0.1.8
+      - image: gcr.azk8s.cn/kubeflow-images-public/metadata-frontend:v0.1.8
         imagePullPolicy: IfNotPresent
         name: metadata-ui
         ports:
@@ -281,7 +281,7 @@ spec:
     spec:
       containers:
       - name: container
-        image: grc.azk8s.cn/ml-pipeline/envoy:metadata-grpc
+        image: gcr.azk8s.cn/ml-pipeline/envoy:metadata-grpc
         ports:
         - name: md-envoy
           containerPort: 9090
@@ -363,20 +363,20 @@ vars:
   fieldref:
     fieldpath: metadata.name
 images:
-- name: grc.azk8s.cn/kubeflow-images-public/metadata
-  newName: grc.azk8s.cn/kubeflow-images-public/metadata
+- name: gcr.azk8s.cn/kubeflow-images-public/metadata
+  newName: gcr.azk8s.cn/kubeflow-images-public/metadata
   newTag: v0.1.11
-- name: grc.azk8s.cn/tfx-oss-public/ml_metadata_store_server
-  newName: grc.azk8s.cn/tfx-oss-public/ml_metadata_store_server
+- name: gcr.azk8s.cn/tfx-oss-public/ml_metadata_store_server
+  newName: gcr.azk8s.cn/tfx-oss-public/ml_metadata_store_server
   newTag: v0.21.1
-- name: grc.azk8s.cn/ml-pipeline/envoy
-  newName: grc.azk8s.cn/ml-pipeline/envoy
+- name: gcr.azk8s.cn/ml-pipeline/envoy
+  newName: gcr.azk8s.cn/ml-pipeline/envoy
   newTag: metadata-grpc
 - name: mysql
   newName: mysql
   newTag: 8.0.3
-- name: grc.azk8s.cn/kubeflow-images-public/metadata-frontend
-  newName: grc.azk8s.cn/kubeflow-images-public/metadata-frontend
+- name: gcr.azk8s.cn/kubeflow-images-public/metadata-frontend
+  newName: gcr.azk8s.cn/kubeflow-images-public/metadata-frontend
   newTag: v0.1.8
 `)
 }

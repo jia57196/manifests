@@ -15,23 +15,23 @@ spec:
         app: centraldashboard
     spec:
       containers:
-      - image: grc.azk8s.cn/kubeflow-images-public/centraldashboard
-        imagePullPolicy: IfNotPresent
-        livenessProbe:
-          httpGet:
-            path: /healthz
-            port: 8082
-          initialDelaySeconds: 30
-          periodSeconds: 30
-        name: centraldashboard
-        ports:
-        - containerPort: 8082
-          protocol: TCP
-        env:
-        - name: USERID_HEADER
-          value: $(userid-header)
-        - name: USERID_PREFIX
-          value: $(userid-prefix)
-        - name: PROFILES_KFAM_SERVICE_HOST
-          value: profiles-kfam.kubeflow
+        - image: gcr.azk8s.cn/kubeflow-images-public/centraldashboard
+          imagePullPolicy: IfNotPresent
+          livenessProbe:
+            httpGet:
+              path: /healthz
+              port: 8082
+            initialDelaySeconds: 30
+            periodSeconds: 30
+          name: centraldashboard
+          ports:
+            - containerPort: 8082
+              protocol: TCP
+          env:
+            - name: USERID_HEADER
+              value: $(userid-header)
+            - name: USERID_PREFIX
+              value: $(userid-prefix)
+            - name: PROFILES_KFAM_SERVICE_HOST
+              value: profiles-kfam.kubeflow
       serviceAccountName: centraldashboard

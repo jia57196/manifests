@@ -732,7 +732,7 @@ varReference:
   kind: Deployment
 `)
 	th.writeF("/manifests/tektoncd/tektoncd-install/base/params.env", `
-registry=grc.azk8s.cn/tekton-releases
+registry=gcr.azk8s.cn/tekton-releases
 webhook=github.com/tektoncd/pipeline/cmd/webhook@sha256:7215a25a58c074bbe30a50db93e6a47d2eb5672f9af7570a4e4ab75e50329131
 nop=github.com/tektoncd/pipeline/cmd/nop@sha256:b372d0cb991cb960854880957c93c460d35e75339016ca6472b5ea2955f08dcb
 entrypoint=github.com/tektoncd/pipeline/cmd/entrypoint@sha256:ac46866bd14ac38960c6aa100ee7468e707a955324ea4c88ce8d39b8cdfee11e

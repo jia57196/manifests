@@ -135,7 +135,7 @@ data:
     defaultWorkflowAgent:
       container:
         name: kubebench-workflow-agent
-        image: grc.azk8s.cn/kubeflow-images-public/kubebench/workflow-agent:bc682c1
+        image: gcr.azk8s.cn/kubeflow-images-public/kubebench/workflow-agent:bc682c1
     defaultManagedVolumes:
       experimentVolume:
         name: kubebench-experiment-volume
@@ -163,7 +163,7 @@ spec:
         configMap:
           name: kubebench-config
       containers:
-      - image: grc.azk8s.cn/kubeflow-images-public/kubebench/kubebench-operator-v1alpha2
+      - image: gcr.azk8s.cn/kubeflow-images-public/kubebench/kubebench-operator-v1alpha2
         name: kubebench-operator
         command:
         - /app/kubebench-operator-v1alpha2
@@ -201,8 +201,8 @@ configMapGenerator:
   env: params.env
 images:
   # NOTE: the image for workflow agent should be configured in config-map.yaml
-  - name:  grc.azk8s.cn/kubeflow-images-public/kubebench/kubebench-operator-v1alpha2
-    newName: grc.azk8s.cn/kubeflow-images-public/kubebench/kubebench-operator-v1alpha2
+  - name:  gcr.azk8s.cn/kubeflow-images-public/kubebench/kubebench-operator-v1alpha2
+    newName: gcr.azk8s.cn/kubeflow-images-public/kubebench/kubebench-operator-v1alpha2
     newTag: bc682c1
 vars:
 - name: clusterDomain

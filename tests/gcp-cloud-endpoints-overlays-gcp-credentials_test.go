@@ -133,7 +133,7 @@ spec:
         app: cloud-endpoints-controller
     spec:
       containers:
-      - image: grc.azk8s.cn/cloud-solutions-group/cloud-endpoints-controller:0.2.1
+      - image: gcr.azk8s.cn/cloud-solutions-group/cloud-endpoints-controller:0.2.1
         imagePullPolicy: Always
         name: cloud-endpoints-controller
         readinessProbe:
@@ -195,8 +195,8 @@ commonLabels:
   app: cloud-endpoints-controller
   kustomize.component: cloud-endpoints
 images:
-- name: grc.azk8s.cn/cloud-solutions-group/cloud-endpoints-controller
-  newName: grc.azk8s.cn/cloud-solutions-group/cloud-endpoints-controller
+- name: gcr.azk8s.cn/cloud-solutions-group/cloud-endpoints-controller
+  newName: gcr.azk8s.cn/cloud-solutions-group/cloud-endpoints-controller
   newTag: 0.2.1
 configMapGenerator:
 - name: cloud-endpoints-parameters

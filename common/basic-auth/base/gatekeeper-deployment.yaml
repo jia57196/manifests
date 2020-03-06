@@ -15,24 +15,24 @@ spec:
         app: basic-auth
     spec:
       containers:
-      - name: app
-        args:
-        - --username=$(USERNAME)
-        - --pwhash=$(PASSWORDHASH)
-        command:
-        - /opt/kubeflow/gatekeeper
-        env:
-        - name: USERNAME
-          valueFrom:
-            secretKeyRef:
-              key: username
-              name: $(authSecretName)
-        - name: PASSWORDHASH
-          valueFrom:
-            secretKeyRef:
-              key: passwordhash
-              name: $(authSecretName)
-        image: grc.azk8s.cn/kubeflow-images-public/gatekeeper:v0.5.0
-        ports:
-        - containerPort: 8085
-        workingDir: /opt/kubeflow
+        - name: app
+          args:
+            - --username=$(USERNAME)
+            - --pwhash=$(PASSWORDHASH)
+          command:
+            - /opt/kubeflow/gatekeeper
+          env:
+            - name: USERNAME
+              valueFrom:
+                secretKeyRef:
+                  key: username
+                  name: $(authSecretName)
+            - name: PASSWORDHASH
+              valueFrom:
+                secretKeyRef:
+                  key: passwordhash
+                  name: $(authSecretName)
+          image: gcr.azk8s.cn/kubeflow-images-public/gatekeeper:v0.5.0
+          ports:
+            - containerPort: 8085
+          workingDir: /opt/kubeflow

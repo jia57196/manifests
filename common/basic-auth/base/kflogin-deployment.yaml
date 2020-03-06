@@ -15,7 +15,7 @@ spec:
         app: basic-auth-login
     spec:
       containers:
-      - name: app
-        image: grc.azk8s.cn/kubeflow-images-public/kflogin-ui:v0.5.0
-        ports:
-        - containerPort: 5000
+        - name: app
+          image: gcr.azk8s.cn/kubeflow-images-public/kflogin-ui:v0.5.0
+          ports:
+            - containerPort: 5000

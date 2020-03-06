@@ -2,14 +2,14 @@ apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 namespace: kubeflow
 resources:
-- cluster-role-binding.yaml
-- cluster-role.yaml
-- deployment.yaml
-- service-account.yaml
-- service.yaml
+  - cluster-role-binding.yaml
+  - cluster-role.yaml
+  - deployment.yaml
+  - service-account.yaml
+  - service.yaml
 commonLabels:
   kustomize.component: tf-job-operator
 images:
-- name: grc.azk8s.cn/kubeflow-images-public/tf_operator
-  newName: grc.azk8s.cn/kubeflow-images-public/tf_operator
-  newTag: v1.0.0-g92389064
+  - name: gcr.azk8s.cn/kubeflow-images-public/tf_operator
+    newName: gcr.azk8s.cn/kubeflow-images-public/tf_operator
+    newTag: v1.0.0-g92389064

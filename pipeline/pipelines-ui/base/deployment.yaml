@@ -14,9 +14,9 @@ spec:
         app: ml-pipeline-ui
     spec:
       containers:
-      - name: ml-pipeline-ui
-        image: grc.azk8s.cn/ml-pipeline/frontend
-        imagePullPolicy: IfNotPresent
-        ports:
-        - containerPort: 3000
+        - name: ml-pipeline-ui
+          image: gcr.azk8s.cn/ml-pipeline/frontend
+          imagePullPolicy: IfNotPresent
+          ports:
+            - containerPort: 3000
       serviceAccountName: ml-pipeline-ui

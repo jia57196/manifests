@@ -47383,7 +47383,7 @@
     ],
     "properties": {
      "names": {
-      "description": "Names by which this image is known. e.g. [\"grc.azk8s.cn/google_containers/hyperkube:v1.0.7\", \"dockerhub.io/google_containers/hyperkube:v1.0.7\"]",
+      "description": "Names by which this image is known. e.g. [\"gcr.azk8s.cn/google_containers/hyperkube:v1.0.7\", \"dockerhub.io/google_containers/hyperkube:v1.0.7\"]",
       "type": "array",
       "items": {
        "type": "string"

@@ -19,7 +19,7 @@
     project:: "kubeflow-ci",
     zone:: "us-east1-d",
     // Default registry to use.
-    //registry:: "grc.azk8s.cn/" + $.defaultParams.project,
+    //registry:: "gcr.azk8s.cn/" + $.defaultParams.project,
 
     // The image tag to use.
     // Defaults to a value based on the name.
@@ -46,7 +46,7 @@
       local srcRootDir = testDir + "/src";
       // The directory containing the kubeflow/manifests repo
       local srcDir = srcRootDir + "/kubeflow/manifests";
-      local testWorkerImage = "grc.azk8s.cn/kubeflow-ci/test-worker:latest";
+      local testWorkerImage = "gcr.azk8s.cn/kubeflow-ci/test-worker:latest";
       local golangImage = "golang:1.9.4-stretch";
       // TODO(jose5918) Build our own helm image
       local pythonImage = "python:3.6-jessie";

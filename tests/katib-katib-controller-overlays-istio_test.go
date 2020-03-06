@@ -60,13 +60,13 @@ data:
   metrics-collector-sidecar: |-
     {
       "StdOut": {
-        "image": "grc.azk8s.cn/kubeflow-images-public/katib/v1alpha3/file-metrics-collector:v0.8.0"
+        "image": "gcr.azk8s.cn/kubeflow-images-public/katib/v1alpha3/file-metrics-collector:v0.8.0"
       },
       "File": {
-        "image": "grc.azk8s.cn/kubeflow-images-public/katib/v1alpha3/file-metrics-collector:v0.8.0"
+        "image": "gcr.azk8s.cn/kubeflow-images-public/katib/v1alpha3/file-metrics-collector:v0.8.0"
       },
       "TensorFlowEvent": {
-        "image": "grc.azk8s.cn/kubeflow-images-public/katib/v1alpha3/tfevent-metrics-collector:v0.8.0",
+        "image": "gcr.azk8s.cn/kubeflow-images-public/katib/v1alpha3/tfevent-metrics-collector:v0.8.0",
         "resources": {
           "limits": {
             "memory": "1Gi"
@@ -77,22 +77,22 @@ data:
   suggestion: |-
     {
       "random": {
-        "image": "grc.azk8s.cn/kubeflow-images-public/katib/v1alpha3/suggestion-hyperopt:v0.8.0"
+        "image": "gcr.azk8s.cn/kubeflow-images-public/katib/v1alpha3/suggestion-hyperopt:v0.8.0"
       },
       "grid": {
-        "image": "grc.azk8s.cn/kubeflow-images-public/katib/v1alpha3/suggestion-chocolate:v0.8.0"
+        "image": "gcr.azk8s.cn/kubeflow-images-public/katib/v1alpha3/suggestion-chocolate:v0.8.0"
       },
       "hyperband": {
-        "image": "grc.azk8s.cn/kubeflow-images-public/katib/v1alpha3/suggestion-hyperband:v0.8.0"
+        "image": "gcr.azk8s.cn/kubeflow-images-public/katib/v1alpha3/suggestion-hyperband:v0.8.0"
       },
       "bayesianoptimization": {
-        "image": "grc.azk8s.cn/kubeflow-images-public/katib/v1alpha3/suggestion-skopt:v0.8.0"
+        "image": "gcr.azk8s.cn/kubeflow-images-public/katib/v1alpha3/suggestion-skopt:v0.8.0"
       },
       "tpe": {
-        "image": "grc.azk8s.cn/kubeflow-images-public/katib/v1alpha3/suggestion-hyperopt:v0.8.0"
+        "image": "gcr.azk8s.cn/kubeflow-images-public/katib/v1alpha3/suggestion-hyperopt:v0.8.0"
       },
       "nasrl": {
-        "image": "grc.azk8s.cn/kubeflow-images-public/katib/v1alpha3/suggestion-nasrl:v0.8.0",
+        "image": "gcr.azk8s.cn/kubeflow-images-public/katib/v1alpha3/suggestion-nasrl:v0.8.0",
         "imagePullPolicy": "Always",
         "resources": {
           "limits": {
@@ -125,7 +125,7 @@ spec:
       serviceAccountName: katib-controller
       containers:
       - name: katib-controller
-        image: grc.azk8s.cn/kubeflow-images-public/katib/v1alpha3/katib-controller
+        image: gcr.azk8s.cn/kubeflow-images-public/katib/v1alpha3/katib-controller
         imagePullPolicy: IfNotPresent
         command: ["./katib-controller"]
         args:
@@ -459,7 +459,7 @@ spec:
     spec:
       containers:
       - name: katib-db-manager
-        image: grc.azk8s.cn/kubeflow-images-public/katib/v1alpha3/katib-db-manager
+        image: gcr.azk8s.cn/kubeflow-images-public/katib/v1alpha3/katib-db-manager
         imagePullPolicy: IfNotPresent
         env:
           - name : DB_NAME
@@ -526,7 +526,7 @@ spec:
     spec:
       containers:
       - name: katib-ui
-        image: grc.azk8s.cn/kubeflow-images-public/katib/v1alpha3/katib-ui
+        image: gcr.azk8s.cn/kubeflow-images-public/katib/v1alpha3/katib-ui
         imagePullPolicy: IfNotPresent
         command:
           - './katib-ui'
@@ -664,15 +664,15 @@ configMapGenerator:
 generatorOptions:
   disableNameSuffixHash: true
 images:
-- name: grc.azk8s.cn/kubeflow-images-public/katib/v1alpha3/katib-controller
+- name: gcr.azk8s.cn/kubeflow-images-public/katib/v1alpha3/katib-controller
   newTag: v0.8.0
-  newName: grc.azk8s.cn/kubeflow-images-public/katib/v1alpha3/katib-controller
-- name: grc.azk8s.cn/kubeflow-images-public/katib/v1alpha3/katib-db-manager
+  newName: gcr.azk8s.cn/kubeflow-images-public/katib/v1alpha3/katib-controller
+- name: gcr.azk8s.cn/kubeflow-images-public/katib/v1alpha3/katib-db-manager
   newTag: v0.8.0
-  newName: grc.azk8s.cn/kubeflow-images-public/katib/v1alpha3/katib-db-manager
-- name: grc.azk8s.cn/kubeflow-images-public/katib/v1alpha3/katib-ui
+  newName: gcr.azk8s.cn/kubeflow-images-public/katib/v1alpha3/katib-db-manager
+- name: gcr.azk8s.cn/kubeflow-images-public/katib/v1alpha3/katib-ui
   newTag: v0.8.0
-  newName: grc.azk8s.cn/kubeflow-images-public/katib/v1alpha3/katib-ui
+  newName: gcr.azk8s.cn/kubeflow-images-public/katib/v1alpha3/katib-ui
 - name: mysql
   newTag: "8"
   newName: mysql

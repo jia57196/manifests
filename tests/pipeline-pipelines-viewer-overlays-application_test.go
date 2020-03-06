@@ -197,7 +197,7 @@ spec:
           valueFrom:
             fieldRef:
               fieldPath: metadata.namespace
-        image: grc.azk8s.cn/ml-pipeline/viewer-crd-controller:0.1.31
+        image: gcr.azk8s.cn/ml-pipeline/viewer-crd-controller:0.1.31
         imagePullPolicy: Always
         name: ml-pipeline-viewer-controller
       serviceAccountName: crd-service-account
@@ -222,9 +222,9 @@ resources:
 - deployment.yaml
 - service-account.yaml
 images:
-- name: grc.azk8s.cn/ml-pipeline/viewer-crd-controller
+- name: gcr.azk8s.cn/ml-pipeline/viewer-crd-controller
   newTag: 0.2.0
-  newName: grc.azk8s.cn/ml-pipeline/viewer-crd-controller
+  newName: gcr.azk8s.cn/ml-pipeline/viewer-crd-controller
 `)
 }
 

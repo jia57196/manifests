@@ -28,21 +28,21 @@ data:
             ]
         },
         "sklearn": {
-            "image": "grc.azk8s.cn/kfserving/sklearnserver",
+            "image": "gcr.azk8s.cn/kfserving/sklearnserver",
             "defaultImageVersion": "0.2.2",
             "allowedImageVersions": [
                "0.2.2"
             ]
         },
         "xgboost": {
-            "image": "grc.azk8s.cn/kfserving/xgbserver",
+            "image": "gcr.azk8s.cn/kfserving/xgbserver",
             "defaultImageVersion": "0.2.2",
             "allowedImageVersions": [
                "0.2.2"
             ]
         },
         "pytorch": {
-            "image": "grc.azk8s.cn/kfserving/pytorchserver",
+            "image": "gcr.azk8s.cn/kfserving/pytorchserver",
             "defaultImageVersion": "0.2.2",
             "allowedImageVersions": [
                "0.2.2"
@@ -62,7 +62,7 @@ data:
   explainers: |-
     {
         "alibi": {
-            "image" : "grc.azk8s.cn/kfserving/alibi-explainer",
+            "image" : "gcr.azk8s.cn/kfserving/alibi-explainer",
             "defaultImageVersion": "0.2.2",
             "allowedImageVersions": [
                "0.2.2"
@@ -71,7 +71,7 @@ data:
     }
   storageInitializer: |-
     {
-        "image" : "grc.azk8s.cn/kfserving/storage-initializer:0.2.2",
+        "image" : "gcr.azk8s.cn/kfserving/storage-initializer:0.2.2",
         "memoryRequest": "100Mi",
         "memoryLimit": "1Gi",
         "cpuRequest": "100m",
@@ -94,7 +94,7 @@ data:
     }
   logger: |-
     {
-        "image" : "grc.azk8s.cn/kfserving/logger:0.2.2",
+        "image" : "gcr.azk8s.cn/kfserving/logger:0.2.2",
         "memoryRequest": "100Mi",
         "memoryLimit": "1Gi",
         "cpuRequest": "100m",

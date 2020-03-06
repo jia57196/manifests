@@ -104,7 +104,7 @@ spec:
           valueFrom:
             fieldRef:
               fieldPath: metadata.namespace
-        image: grc.azk8s.cn/ml-pipeline/api-server
+        image: gcr.azk8s.cn/ml-pipeline/api-server
         imagePullPolicy: IfNotPresent
         command:
           - apiserver 
@@ -210,9 +210,9 @@ resources:
 - service-account.yaml
 - service.yaml
 images:
-- name: grc.azk8s.cn/ml-pipeline/api-server
+- name: gcr.azk8s.cn/ml-pipeline/api-server
   newTag: 0.2.0
-  newName: grc.azk8s.cn/ml-pipeline/api-server
+  newName: gcr.azk8s.cn/ml-pipeline/api-server
 `)
 }
 

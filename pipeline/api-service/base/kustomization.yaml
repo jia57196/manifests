@@ -3,13 +3,13 @@ kind: Kustomization
 commonLabels:
   app: ml-pipeline
 resources:
-- config-map.yaml
-- deployment.yaml
-- role-binding.yaml
-- role.yaml
-- service-account.yaml
-- service.yaml
+  - config-map.yaml
+  - deployment.yaml
+  - role-binding.yaml
+  - role.yaml
+  - service-account.yaml
+  - service.yaml
 images:
-- name: grc.azk8s.cn/ml-pipeline/api-server
-  newTag: 0.2.0
-  newName: grc.azk8s.cn/ml-pipeline/api-server
+  - name: gcr.azk8s.cn/ml-pipeline/api-server
+    newTag: 0.2.0
+    newName: gcr.azk8s.cn/ml-pipeline/api-server

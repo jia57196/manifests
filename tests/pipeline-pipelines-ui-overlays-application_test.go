@@ -80,7 +80,7 @@ spec:
     spec:
       containers:
       - name: ml-pipeline-ui
-        image: grc.azk8s.cn/ml-pipeline/frontend
+        image: gcr.azk8s.cn/ml-pipeline/frontend
         imagePullPolicy: IfNotPresent
         ports:
         - containerPort: 3000
@@ -207,9 +207,9 @@ configMapGenerator:
 - name: ui-parameters
   env: params.env
 images:
-- name: grc.azk8s.cn/ml-pipeline/frontend
+- name: gcr.azk8s.cn/ml-pipeline/frontend
   newTag: 0.2.0
-  newName: grc.azk8s.cn/ml-pipeline/frontend
+  newName: gcr.azk8s.cn/ml-pipeline/frontend
 vars:
 - name: ui-namespace
   objref:

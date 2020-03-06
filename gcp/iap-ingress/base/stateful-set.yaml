@@ -15,26 +15,26 @@ spec:
         service: backend-updater
     spec:
       containers:
-      - command:
-        - bash
-        - /var/envoy-config/update_backend.sh
-        env:
-        - name: NAMESPACE
-          value: $(istioNamespace)
-        - name: SERVICE
-          value: istio-ingressgateway
-        - name: INGRESS_NAME
-          value: $(ingressName)
-        - name: USE_ISTIO
-          value: "true"
-        image: grc.azk8s.cn/kubeflow-images-public/ingress-setup:latest
-        name: backend-updater
-        volumeMounts:
-        - mountPath: /var/envoy-config/
-          name: config-volume
+        - command:
+            - bash
+            - /var/envoy-config/update_backend.sh
+          env:
+            - name: NAMESPACE
+              value: $(istioNamespace)
+            - name: SERVICE
+              value: istio-ingressgateway
+            - name: INGRESS_NAME
+              value: $(ingressName)
+            - name: USE_ISTIO
+              value: "true"
+          image: gcr.azk8s.cn/kubeflow-images-public/ingress-setup:latest
+          name: backend-updater
+          volumeMounts:
+            - mountPath: /var/envoy-config/
+              name: config-volume
       serviceAccountName: kf-admin
       volumes:
-      - configMap:
-          name: envoy-config
-        name: config-volume
+        - configMap:
+            name: envoy-config
+          name: config-volume
   volumeClaimTemplates: []

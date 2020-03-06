@@ -27,7 +27,7 @@ spec:
     spec:
       containers:
       - name: manager
-        image: grc.azk8s.cn/$(project)/application-controller:latest
+        image: gcr.azk8s.cn/$(project)/application-controller:latest
         command:
         - /go/bin/dlv
         args:
@@ -49,8 +49,8 @@ bases:
 patchesStrategicMerge:
 - stateful-set.yaml
 images:
-- name: grc.azk8s.cn/$(project)/application-controller
-  newName: grc.azk8s.cn/$(project)/application-controller
+- name: gcr.azk8s.cn/$(project)/application-controller
+  newName: gcr.azk8s.cn/$(project)/application-controller
   newTag: latest
 `)
 	th.writeF("/manifests/application/application/base/cluster-role.yaml", `
@@ -125,7 +125,7 @@ spec:
       - name: manager
         command:
         - /root/manager
-        image: grc.azk8s.cn/kubeflow-images-public/kubernetes-sigs/application
+        image: gcr.azk8s.cn/kubeflow-images-public/kubernetes-sigs/application
         imagePullPolicy: Always
         env:
         - name: project
@@ -158,8 +158,8 @@ configMapGenerator:
 generatorOptions:
   disableNameSuffixHash: true
 images:
-- name: grc.azk8s.cn/kubeflow-images-public/kubernetes-sigs/application
-  newName: grc.azk8s.cn/kubeflow-images-public/kubernetes-sigs/application
+- name: gcr.azk8s.cn/kubeflow-images-public/kubernetes-sigs/application
+  newName: gcr.azk8s.cn/kubeflow-images-public/kubernetes-sigs/application
   newTag: 1.0-beta
 vars:
 - name: project

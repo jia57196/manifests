@@ -13,19 +13,19 @@ spec:
         sidecar.istio.io/inject: "false"
     spec:
       containers:
-      - args:
-        - --alsologtostderr
-        - -v=1
-        - --monitoring-port=8443
-        env:
-        - name: MY_POD_NAMESPACE
-          valueFrom:
-            fieldRef:
-              fieldPath: metadata.namespace
-        - name: MY_POD_NAME
-          valueFrom:
-            fieldRef:
-              fieldPath: metadata.name
-        image: grc.azk8s.cn/kubeflow-images-public/tf_operator:kubeflow-tf-operator-postsubmit-v1-5adee6f-6109-a25c
-        name: tf-job-operator
+        - args:
+            - --alsologtostderr
+            - -v=1
+            - --monitoring-port=8443
+          env:
+            - name: MY_POD_NAMESPACE
+              valueFrom:
+                fieldRef:
+                  fieldPath: metadata.namespace
+            - name: MY_POD_NAME
+              valueFrom:
+                fieldRef:
+                  fieldPath: metadata.name
+          image: gcr.azk8s.cn/kubeflow-images-public/tf_operator:kubeflow-tf-operator-postsubmit-v1-5adee6f-6109-a25c
+          name: tf-job-operator
       serviceAccountName: tf-job-operator

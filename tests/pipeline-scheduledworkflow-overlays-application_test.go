@@ -154,7 +154,7 @@ spec:
           valueFrom:
             fieldRef:
               fieldPath: metadata.namespace
-        image: grc.azk8s.cn/ml-pipeline/scheduledworkflow
+        image: gcr.azk8s.cn/ml-pipeline/scheduledworkflow
         imagePullPolicy: IfNotPresent
       serviceAccountName: ml-pipeline-scheduledworkflow
 `)
@@ -222,9 +222,9 @@ resources:
 - role.yaml
 - service-account.yaml
 images:
-- name: grc.azk8s.cn/ml-pipeline/scheduledworkflow
+- name: gcr.azk8s.cn/ml-pipeline/scheduledworkflow
   newTag: 0.2.0
-  newName: grc.azk8s.cn/ml-pipeline/scheduledworkflow
+  newName: gcr.azk8s.cn/ml-pipeline/scheduledworkflow
 `)
 }
 

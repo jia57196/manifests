@@ -250,7 +250,7 @@ spec:
         - $(userid-prefix)
         - "-workload-identity"
         - $(gcp-sa)
-        image: grc.azk8s.cn/kubeflow-images-public/profile-controller:v20190619-v0-219-gbd3daa8c-dirty-1ced0e
+        image: gcr.azk8s.cn/kubeflow-images-public/profile-controller:v20190619-v0-219-gbd3daa8c-dirty-1ced0e
         imagePullPolicy: Always
         name: manager
         livenessProbe:
@@ -268,7 +268,7 @@ spec:
         - $(userid-header)
         - "-userid-prefix"
         - $(userid-prefix)
-        image: grc.azk8s.cn/kubeflow-images-public/kfam:v20190612-v0-170-ga06cdb79-dirty-a33ee4
+        image: gcr.azk8s.cn/kubeflow-images-public/kfam:v20190612-v0-170-ga06cdb79-dirty-a33ee4
         imagePullPolicy: Always
         name: kfam
         livenessProbe:
@@ -332,11 +332,11 @@ configMapGenerator:
   - params.env
   name: profiles-parameters
 images:
-- name: grc.azk8s.cn/kubeflow-images-public/kfam
-  newName: grc.azk8s.cn/kubeflow-images-public/kfam
+- name: gcr.azk8s.cn/kubeflow-images-public/kfam
+  newName: gcr.azk8s.cn/kubeflow-images-public/kfam
   newTag: v1.0.0-gf3e09203
-- name: grc.azk8s.cn/kubeflow-images-public/profile-controller
-  newName: grc.azk8s.cn/kubeflow-images-public/profile-controller
+- name: gcr.azk8s.cn/kubeflow-images-public/profile-controller
+  newName: gcr.azk8s.cn/kubeflow-images-public/profile-controller
   newTag: v1.0.0-ge50a8531
 vars:
 - fieldref:

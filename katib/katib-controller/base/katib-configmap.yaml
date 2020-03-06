@@ -6,13 +6,13 @@ data:
   metrics-collector-sidecar: |-
     {
       "StdOut": {
-        "image": "grc.azk8s.cn/kubeflow-images-public/katib/v1alpha3/file-metrics-collector:v0.8.0"
+        "image": "gcr.azk8s.cn/kubeflow-images-public/katib/v1alpha3/file-metrics-collector:v0.8.0"
       },
       "File": {
-        "image": "grc.azk8s.cn/kubeflow-images-public/katib/v1alpha3/file-metrics-collector:v0.8.0"
+        "image": "gcr.azk8s.cn/kubeflow-images-public/katib/v1alpha3/file-metrics-collector:v0.8.0"
       },
       "TensorFlowEvent": {
-        "image": "grc.azk8s.cn/kubeflow-images-public/katib/v1alpha3/tfevent-metrics-collector:v0.8.0",
+        "image": "gcr.azk8s.cn/kubeflow-images-public/katib/v1alpha3/tfevent-metrics-collector:v0.8.0",
         "resources": {
           "limits": {
             "memory": "1Gi"
@@ -23,22 +23,22 @@ data:
   suggestion: |-
     {
       "random": {
-        "image": "grc.azk8s.cn/kubeflow-images-public/katib/v1alpha3/suggestion-hyperopt:v0.8.0"
+        "image": "gcr.azk8s.cn/kubeflow-images-public/katib/v1alpha3/suggestion-hyperopt:v0.8.0"
       },
       "grid": {
-        "image": "grc.azk8s.cn/kubeflow-images-public/katib/v1alpha3/suggestion-chocolate:v0.8.0"
+        "image": "gcr.azk8s.cn/kubeflow-images-public/katib/v1alpha3/suggestion-chocolate:v0.8.0"
       },
       "hyperband": {
-        "image": "grc.azk8s.cn/kubeflow-images-public/katib/v1alpha3/suggestion-hyperband:v0.8.0"
+        "image": "gcr.azk8s.cn/kubeflow-images-public/katib/v1alpha3/suggestion-hyperband:v0.8.0"
       },
       "bayesianoptimization": {
-        "image": "grc.azk8s.cn/kubeflow-images-public/katib/v1alpha3/suggestion-skopt:v0.8.0"
+        "image": "gcr.azk8s.cn/kubeflow-images-public/katib/v1alpha3/suggestion-skopt:v0.8.0"
       },
       "tpe": {
-        "image": "grc.azk8s.cn/kubeflow-images-public/katib/v1alpha3/suggestion-hyperopt:v0.8.0"
+        "image": "gcr.azk8s.cn/kubeflow-images-public/katib/v1alpha3/suggestion-hyperopt:v0.8.0"
       },
       "nasrl": {
-        "image": "grc.azk8s.cn/kubeflow-images-public/katib/v1alpha3/suggestion-nasrl:v0.8.0",
+        "image": "gcr.azk8s.cn/kubeflow-images-public/katib/v1alpha3/suggestion-nasrl:v0.8.0",
         "imagePullPolicy": "Always",
         "resources": {
           "limits": {

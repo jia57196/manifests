@@ -662,7 +662,7 @@ data:
 
     # List of repositories for which tag to digest resolving should be skipped
     registriesSkippingTagResolving: "ko.local,dev.local"
-  queueSidecarImage: grc.azk8s.cn/knative-releases/knative.dev/serving/cmd/queue@sha256:792f6945c7bc73a49a470a5b955c39c8bd174705743abf5fb71aa0f4c04128eb
+  queueSidecarImage: gcr.azk8s.cn/knative-releases/knative.dev/serving/cmd/queue@sha256:792f6945c7bc73a49a470a5b955c39c8bd174705743abf5fb71aa0f4c04128eb
 kind: ConfigMap
 metadata:
   labels:
@@ -1189,7 +1189,7 @@ spec:
               value: config-observability
             - name: METRICS_DOMAIN
               value: knative.dev/internal/serving
-          image: grc.azk8s.cn/knative-releases/knative.dev/serving/cmd/activator@sha256:8e606671215cc029683e8cd633ec5de9eabeaa6e9a4392ff289883304be1f418
+          image: gcr.azk8s.cn/knative-releases/knative.dev/serving/cmd/activator@sha256:8e606671215cc029683e8cd633ec5de9eabeaa6e9a4392ff289883304be1f418
           livenessProbe:
             httpGet:
               httpHeaders:
@@ -1259,7 +1259,7 @@ spec:
               value: config-observability
             - name: METRICS_DOMAIN
               value: knative.dev/serving
-          image: grc.azk8s.cn/knative-releases/knative.dev/serving/cmd/autoscaler-hpa@sha256:5e0fadf574e66fb1c893806b5c5e5f19139cc476ebf1dff9860789fe4ac5f545
+          image: gcr.azk8s.cn/knative-releases/knative.dev/serving/cmd/autoscaler-hpa@sha256:5e0fadf574e66fb1c893806b5c5e5f19139cc476ebf1dff9860789fe4ac5f545
           name: autoscaler-hpa
           ports:
             - containerPort: 9090
@@ -1314,7 +1314,7 @@ spec:
               value: config-observability
             - name: METRICS_DOMAIN
               value: knative.dev/serving
-          image: grc.azk8s.cn/knative-releases/knative.dev/serving/cmd/autoscaler@sha256:ef1f01b5fb3886d4c488a219687aac72d28e72f808691132f658259e4e02bb27
+          image: gcr.azk8s.cn/knative-releases/knative.dev/serving/cmd/autoscaler@sha256:ef1f01b5fb3886d4c488a219687aac72d28e72f808691132f658259e4e02bb27
           livenessProbe:
             httpGet:
               httpHeaders:
@@ -1383,7 +1383,7 @@ spec:
               value: config-observability
             - name: METRICS_DOMAIN
               value: knative.dev/serving
-          image: grc.azk8s.cn/knative-releases/knative.dev/serving/cmd/networking/istio@sha256:727a623ccb17676fae8058cb1691207a9658a8d71bc7603d701e23b1a6037e6c
+          image: gcr.azk8s.cn/knative-releases/knative.dev/serving/cmd/networking/istio@sha256:727a623ccb17676fae8058cb1691207a9658a8d71bc7603d701e23b1a6037e6c
           name: networking-istio
           ports:
             - containerPort: 9090
@@ -1436,7 +1436,7 @@ spec:
               value: config-observability
             - name: METRICS_DOMAIN
               value: knative.dev/serving
-          image: grc.azk8s.cn/knative-releases/knative.dev/serving/cmd/webhook@sha256:1ef3328282f31704b5802c1136bd117e8598fd9f437df8209ca87366c5ce9fcb
+          image: gcr.azk8s.cn/knative-releases/knative.dev/serving/cmd/webhook@sha256:1ef3328282f31704b5802c1136bd117e8598fd9f437df8209ca87366c5ce9fcb
           name: webhook
           ports:
             - containerPort: 9090
@@ -1486,7 +1486,7 @@ spec:
               value: config-observability
             - name: METRICS_DOMAIN
               value: knative.dev/internal/serving
-          image: grc.azk8s.cn/knative-releases/knative.dev/serving/cmd/controller@sha256:5ca13e5b3ce5e2819c4567b75c0984650a57272ece44bc1dabf930f9fe1e19a1
+          image: gcr.azk8s.cn/knative-releases/knative.dev/serving/cmd/controller@sha256:5ca13e5b3ce5e2819c4567b75c0984650a57272ece44bc1dabf930f9fe1e19a1
           name: controller
           ports:
             - containerPort: 9090
@@ -1636,7 +1636,7 @@ metadata:
   name: queue-proxy
   namespace: knative-serving
 spec:
-  image: grc.azk8s.cn/knative-releases/knative.dev/serving/cmd/queue@sha256:792f6945c7bc73a49a470a5b955c39c8bd174705743abf5fb71aa0f4c04128eb
+  image: gcr.azk8s.cn/knative-releases/knative.dev/serving/cmd/queue@sha256:792f6945c7bc73a49a470a5b955c39c8bd174705743abf5fb71aa0f4c04128eb
 
 
 `)
@@ -1750,23 +1750,23 @@ resources:
 commonLabels:
   kustomize.component: knative
 images:
-- name: grc.azk8s.cn/knative-releases/knative.dev/serving/cmd/activator
-  newName: grc.azk8s.cn/knative-releases/knative.dev/serving/cmd/activator
+- name: gcr.azk8s.cn/knative-releases/knative.dev/serving/cmd/activator
+  newName: gcr.azk8s.cn/knative-releases/knative.dev/serving/cmd/activator
   digest: sha256:8e606671215cc029683e8cd633ec5de9eabeaa6e9a4392ff289883304be1f418
-- name: grc.azk8s.cn/knative-releases/knative.dev/serving/cmd/autoscaler-hpa
-  newName: grc.azk8s.cn/knative-releases/knative.dev/serving/cmd/autoscaler-hpa
+- name: gcr.azk8s.cn/knative-releases/knative.dev/serving/cmd/autoscaler-hpa
+  newName: gcr.azk8s.cn/knative-releases/knative.dev/serving/cmd/autoscaler-hpa
   digest: sha256:5e0fadf574e66fb1c893806b5c5e5f19139cc476ebf1dff9860789fe4ac5f545
-- name: grc.azk8s.cn/knative-releases/knative.dev/serving/cmd/autoscaler
-  newName: grc.azk8s.cn/knative-releases/knative.dev/serving/cmd/autoscaler
+- name: gcr.azk8s.cn/knative-releases/knative.dev/serving/cmd/autoscaler
+  newName: gcr.azk8s.cn/knative-releases/knative.dev/serving/cmd/autoscaler
   digest: sha256:ef1f01b5fb3886d4c488a219687aac72d28e72f808691132f658259e4e02bb27
-- name: grc.azk8s.cn/knative-releases/knative.dev/serving/cmd/networking/istio
-  newName: grc.azk8s.cn/knative-releases/knative.dev/serving/cmd/networking/istio
+- name: gcr.azk8s.cn/knative-releases/knative.dev/serving/cmd/networking/istio
+  newName: gcr.azk8s.cn/knative-releases/knative.dev/serving/cmd/networking/istio
   digest: sha256:727a623ccb17676fae8058cb1691207a9658a8d71bc7603d701e23b1a6037e6c
-- name: grc.azk8s.cn/knative-releases/knative.dev/serving/cmd/webhook
-  newName: grc.azk8s.cn/knative-releases/knative.dev/serving/cmd/webhook
+- name: gcr.azk8s.cn/knative-releases/knative.dev/serving/cmd/webhook
+  newName: gcr.azk8s.cn/knative-releases/knative.dev/serving/cmd/webhook
   digest: sha256:1ef3328282f31704b5802c1136bd117e8598fd9f437df8209ca87366c5ce9fcb
-- name: grc.azk8s.cn/knative-releases/knative.dev/serving/cmd/controller
-  newName: grc.azk8s.cn/knative-releases/knative.dev/serving/cmd/controller
+- name: gcr.azk8s.cn/knative-releases/knative.dev/serving/cmd/controller
+  newName: gcr.azk8s.cn/knative-releases/knative.dev/serving/cmd/controller
   digest: sha256:5ca13e5b3ce5e2819c4567b75c0984650a57272ece44bc1dabf930f9fe1e19a1
 `)
 }

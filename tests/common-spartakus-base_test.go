@@ -64,7 +64,7 @@ spec:
         - volunteer
         - --cluster-id=$(usageId)
         - --database=https://stats-collector.kubeflow.org
-        image: grc.azk8s.cn/google_containers/spartakus-amd64:v1.1.0
+        image: gcr.azk8s.cn/google_containers/spartakus-amd64:v1.1.0
         name: volunteer
       serviceAccountName: spartakus
 `)
@@ -95,8 +95,8 @@ resources:
 commonLabels:
   kustomize.component: spartakus
 images:
-- name: grc.azk8s.cn/google_containers/spartakus-amd64
-  newName: grc.azk8s.cn/google_containers/spartakus-amd64
+- name: gcr.azk8s.cn/google_containers/spartakus-amd64
+  newName: gcr.azk8s.cn/google_containers/spartakus-amd64
   newTag: v1.1.0
 configMapGenerator:
 - name: spartakus-parameters

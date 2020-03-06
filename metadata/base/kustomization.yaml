@@ -4,63 +4,63 @@ kind: Kustomization
 commonLabels:
   kustomize.component: metadata
 configMapGenerator:
-- name: ui-parameters
-  env: params.env
-- name: metadata-grpc-configmap
-  env: grpc-params.env
+  - name: ui-parameters
+    env: params.env
+  - name: metadata-grpc-configmap
+    env: grpc-params.env
 resources:
-- metadata-deployment.yaml
-- metadata-service.yaml
-- metadata-ui-deployment.yaml
-- metadata-ui-role.yaml
-- metadata-ui-rolebinding.yaml
-- metadata-ui-sa.yaml
-- metadata-ui-service.yaml
-- metadata-envoy-deployment.yaml
-- metadata-envoy-service.yaml
+  - metadata-deployment.yaml
+  - metadata-service.yaml
+  - metadata-ui-deployment.yaml
+  - metadata-ui-role.yaml
+  - metadata-ui-rolebinding.yaml
+  - metadata-ui-sa.yaml
+  - metadata-ui-service.yaml
+  - metadata-envoy-deployment.yaml
+  - metadata-envoy-service.yaml
 namespace: kubeflow
 vars:
-- name: ui-namespace
-  objref:
-    kind: Service
-    name: ui
-    apiVersion: v1
-  fieldref:
-    fieldpath: metadata.namespace
-- name: ui-clusterDomain
-  objref:
-    kind: ConfigMap
-    name: ui-parameters
-    version: v1
-  fieldref:
-    fieldpath: data.uiClusterDomain
-- name: service
-  objref:
-    kind: Service
-    name: ui
-    apiVersion: v1
-  fieldref:
-    fieldpath: metadata.name
-- name: metadata-envoy-service
-  objref:
-    kind: Service
-    name: envoy-service
-    apiVersion: v1
-  fieldref:
-    fieldpath: metadata.name
+  - name: ui-namespace
+    objref:
+      kind: Service
+      name: ui
+      apiVersion: v1
+    fieldref:
+      fieldpath: metadata.namespace
+  - name: ui-clusterDomain
+    objref:
+      kind: ConfigMap
+      name: ui-parameters
+      version: v1
+    fieldref:
+      fieldpath: data.uiClusterDomain
+  - name: service
+    objref:
+      kind: Service
+      name: ui
+      apiVersion: v1
+    fieldref:
+      fieldpath: metadata.name
+  - name: metadata-envoy-service
+    objref:
+      kind: Service
+      name: envoy-service
+      apiVersion: v1
+    fieldref:
+      fieldpath: metadata.name
 images:
-- name: grc.azk8s.cn/kubeflow-images-public/metadata
-  newName: grc.azk8s.cn/kubeflow-images-public/metadata
-  newTag: v0.1.11
-- name: grc.azk8s.cn/tfx-oss-public/ml_metadata_store_server
-  newName: grc.azk8s.cn/tfx-oss-public/ml_metadata_store_server
-  newTag: v0.21.1
-- name: grc.azk8s.cn/ml-pipeline/envoy
-  newName: grc.azk8s.cn/ml-pipeline/envoy
-  newTag: metadata-grpc
-- name: mysql
-  newName: mysql
-  newTag: 8.0.3
-- name: grc.azk8s.cn/kubeflow-images-public/metadata-frontend
-  newName: grc.azk8s.cn/kubeflow-images-public/metadata-frontend
-  newTag: v0.1.8
+  - name: gcr.azk8s.cn/kubeflow-images-public/metadata
+    newName: gcr.azk8s.cn/kubeflow-images-public/metadata
+    newTag: v0.1.11
+  - name: gcr.azk8s.cn/tfx-oss-public/ml_metadata_store_server
+    newName: gcr.azk8s.cn/tfx-oss-public/ml_metadata_store_server
+    newTag: v0.21.1
+  - name: gcr.azk8s.cn/ml-pipeline/envoy
+    newName: gcr.azk8s.cn/ml-pipeline/envoy
+    newTag: metadata-grpc
+  - name: mysql
+    newName: mysql
+    newTag: 8.0.3
+  - name: gcr.azk8s.cn/kubeflow-images-public/metadata-frontend
+    newName: gcr.azk8s.cn/kubeflow-images-public/metadata-frontend
+    newTag: v0.1.8

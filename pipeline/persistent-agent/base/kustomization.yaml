@@ -4,11 +4,11 @@ nameprefix: ml-pipeline-
 commonLabels:
   app: ml-pipeline-persistenceagent
 resources:
-- clusterrole-binding.yaml
-- clusterrole.yaml
-- deployment.yaml
-- service-account.yaml
+  - clusterrole-binding.yaml
+  - clusterrole.yaml
+  - deployment.yaml
+  - service-account.yaml
 images:
-- name: grc.azk8s.cn/ml-pipeline/persistenceagent
-  newTag: 0.2.0
-  newName: grc.azk8s.cn/ml-pipeline/persistenceagent
+  - name: gcr.azk8s.cn/ml-pipeline/persistenceagent
+    newTag: 0.2.0
+    newName: gcr.azk8s.cn/ml-pipeline/persistenceagent
