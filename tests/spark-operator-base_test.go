@@ -120,7 +120,7 @@ spec:
         - -c
         - 'curl -ik -X DELETE -H "Authorization: Bearer $(cat /var/run/secrets/kubernetes.io/serviceaccount/token)"
           -H "Accept: application/json" -H "Content-Type: application/json" https://kubernetes.default.svc/apis/apiextensions.k8s.io/v1beta1/customresourcedefinitions/sparkapplications.sparkoperator.k8s.io'
-        image: gcr.io/spark-operator/spark-operator:v2.4.0-v1beta1-0.8.2
+        image: gcr.azk8s.cn/spark-operator/spark-operator:v2.4.0-v1beta1-0.8.2
         imagePullPolicy: IfNotPresent
         name: delete-sparkapp-crd
       - command:
@@ -128,7 +128,7 @@ spec:
         - -c
         - 'curl -ik -X DELETE -H "Authorization: Bearer $(cat /var/run/secrets/kubernetes.io/serviceaccount/token)"
           -H "Accept: application/json" -H "Content-Type: application/json" https://kubernetes.default.svc/apis/apiextensions.k8s.io/v1beta1/customresourcedefinitions/scheduledsparkapplications.sparkoperator.k8s.io'
-        image: gcr.io/spark-operator/spark-operator:v2.4.0-v1beta1-0.8.2
+        image: gcr.azk8s.cn/spark-operator/spark-operator:v2.4.0-v1beta1-0.8.2
         imagePullPolicy: IfNotPresent
         name: delete-scheduledsparkapp-crd
       restartPolicy: OnFailure
@@ -173,7 +173,7 @@ spec:
         - -metrics-port=10254
         - -metrics-endpoint=/metrics
         - -metrics-prefix=
-        image: gcr.io/spark-operator/spark-operator:v2.4.0-v1beta1-0.8.2
+        image: gcr.azk8s.cn/spark-operator/spark-operator:v2.4.0-v1beta1-0.8.2
         imagePullPolicy: IfNotPresent
         name: sparkoperator
         ports:
@@ -199,12 +199,12 @@ commonLabels:
 # Images modify the tags for images without
 # creating patches.
 images:
-- name: gcr.io/spark-operator/spark-operator
+- name: gcr.azk8s.cn/spark-operator/spark-operator
   newTag: v2.4.0-v1beta1-0.8.2
 
 # Value of this field is prepended to the
 # names of all resources
-  newName: gcr.io/spark-operator/spark-operator
+  newName: gcr.azk8s.cn/spark-operator/spark-operator
 namePrefix: spark-operator
 
 # List of resource files that kustomize reads, modifies

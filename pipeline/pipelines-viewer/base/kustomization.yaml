@@ -5,12 +5,12 @@ nameprefix: ml-pipeline-viewer-
 commonLabels:
   app: ml-pipeline-viewer-crd
 resources:
-- crd.yaml
-- cluster-role-binding.yaml
-- cluster-role.yaml
-- deployment.yaml
-- service-account.yaml
+  - crd.yaml
+  - cluster-role-binding.yaml
+  - cluster-role.yaml
+  - deployment.yaml
+  - service-account.yaml
 images:
-- name: gcr.io/ml-pipeline/viewer-crd-controller
-  newTag: 0.1.31
-  newName: gcr.io/ml-pipeline/viewer-crd-controller
+  - name: gcr.azk8s.cn/ml-pipeline/viewer-crd-controller
+    newTag: 0.1.31
+    newName: gcr.azk8s.cn/ml-pipeline/viewer-crd-controller

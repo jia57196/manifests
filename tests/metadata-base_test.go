@@ -134,7 +134,7 @@ spec:
     spec:
       containers:
       - name: container
-        image: gcr.io/kubeflow-images-public/metadata:v0.1.11
+        image: gcr.azk8s.cn/kubeflow-images-public/metadata:v0.1.11
         env:
         - name: MYSQL_ROOT_PASSWORD
           valueFrom:
@@ -196,7 +196,7 @@ spec:
     spec:
       containers:
         - name: container
-          image: gcr.io/tfx-oss-public/ml_metadata_store_server:0.15.1
+          image: gcr.azk8s.cn/tfx-oss-public/ml_metadata_store_server:0.15.1
           env:
           - name: MYSQL_ROOT_PASSWORD
             valueFrom:
@@ -279,7 +279,7 @@ spec:
         app: metadata-ui
     spec:
       containers:
-      - image: gcr.io/kubeflow-images-public/metadata-frontend:v0.1.8
+      - image: gcr.azk8s.cn/kubeflow-images-public/metadata-frontend:v0.1.8
         imagePullPolicy: IfNotPresent
         name: metadata-ui
         ports:
@@ -370,7 +370,7 @@ spec:
     spec:
       containers:
       - name: container
-        image: gcr.io/ml-pipeline/envoy:metadata-grpc
+        image: gcr.azk8s.cn/ml-pipeline/envoy:metadata-grpc
         ports:
         - name: md-envoy
           containerPort: 9090
@@ -451,20 +451,20 @@ vars:
   fieldref:
     fieldpath: metadata.name
 images:
-- name: gcr.io/kubeflow-images-public/metadata
-  newName: gcr.io/kubeflow-images-public/metadata
+- name: gcr.azk8s.cn/kubeflow-images-public/metadata
+  newName: gcr.azk8s.cn/kubeflow-images-public/metadata
   newTag: v0.1.11
-- name: gcr.io/tfx-oss-public/ml_metadata_store_server
-  newName: gcr.io/tfx-oss-public/ml_metadata_store_server
+- name: gcr.azk8s.cn/tfx-oss-public/ml_metadata_store_server
+  newName: gcr.azk8s.cn/tfx-oss-public/ml_metadata_store_server
   newTag: 0.15.1
-- name: gcr.io/ml-pipeline/envoy
-  newName: gcr.io/ml-pipeline/envoy
+- name: gcr.azk8s.cn/ml-pipeline/envoy
+  newName: gcr.azk8s.cn/ml-pipeline/envoy
   newTag: metadata-grpc
 - name: mysql
   newName: mysql
   newTag: 8.0.3
-- name: gcr.io/kubeflow-images-public/metadata-frontend
-  newName: gcr.io/kubeflow-images-public/metadata-frontend
+- name: gcr.azk8s.cn/kubeflow-images-public/metadata-frontend
+  newName: gcr.azk8s.cn/kubeflow-images-public/metadata-frontend
   newTag: v0.1.8
 `)
 }

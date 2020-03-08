@@ -107,7 +107,7 @@ spec:
     spec:
       containers:
       - name: authservice
-        image: gcr.io/arrikto/kubeflow/oidc-authservice:6ac9400
+        image: gcr.azk8s.cn/arrikto/kubeflow/oidc-authservice:6ac9400
         imagePullPolicy: Always
         ports:
         - name: http-api
@@ -298,8 +298,8 @@ vars:
 configurations:
 - params.yaml
 images:
-- name: gcr.io/arrikto/kubeflow/oidc-authservice
-  newName: gcr.io/arrikto/kubeflow/oidc-authservice
+- name: gcr.azk8s.cn/arrikto/kubeflow/oidc-authservice
+  newName: gcr.azk8s.cn/arrikto/kubeflow/oidc-authservice
   newTag: 28c59ef
 `)
 }

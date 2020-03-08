@@ -267,7 +267,7 @@ spec:
       namespace: stackdriver
     spec:
       containers:
-        - image: gcr.io/stackdriver-prometheus/stackdriver-prometheus:release-0.4.2
+        - image: gcr.azk8s.cn/stackdriver-prometheus/stackdriver-prometheus:release-0.4.2
           imagePullPolicy: Always
           name: prometheus
           ports:
@@ -310,8 +310,8 @@ configMapGenerator:
 - name: prometheus-parameters
   env: params.env
 images:
-- name: gcr.io/stackdriver-prometheus/stackdriver-prometheus
-  newName: gcr.io/stackdriver-prometheus/stackdriver-prometheus
+- name: gcr.azk8s.cn/stackdriver-prometheus/stackdriver-prometheus
+  newName: gcr.azk8s.cn/stackdriver-prometheus/stackdriver-prometheus
   newTag: release-0.4.2
 vars:
 - name: projectId

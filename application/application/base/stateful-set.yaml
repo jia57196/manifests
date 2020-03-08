@@ -13,13 +13,13 @@ spec:
         app: application-controller
     spec:
       containers:
-      - name: manager
-        command:
-        - /root/manager
-        image: gcr.io/kubeflow-images-public/kubernetes-sigs/application
-        imagePullPolicy: Always
-        env:
-        - name: project
-          value: $(project)
+        - name: manager
+          command:
+            - /root/manager
+          image: gcr.azk8s.cn/kubeflow-images-public/kubernetes-sigs/application
+          imagePullPolicy: Always
+          env:
+            - name: project
+              value: $(project)
       serviceAccountName: service-account
   volumeClaimTemplates: []

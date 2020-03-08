@@ -70,7 +70,7 @@ spec:
     spec:
       containers:
       - name: app
-        image: gcr.io/kubeflow-images-public/kflogin-ui:v0.5.0
+        image: gcr.azk8s.cn/kubeflow-images-public/kflogin-ui:v0.5.0
         ports:
         - containerPort: 5000
 `)
@@ -109,7 +109,7 @@ spec:
             secretKeyRef:
               key: passwordhash
               name: $(authSecretName)
-        image: gcr.io/kubeflow-images-public/gatekeeper:v0.5.0
+        image: gcr.azk8s.cn/kubeflow-images-public/gatekeeper:v0.5.0
         ports:
         - containerPort: 8085
         workingDir: /opt/kubeflow
@@ -187,11 +187,11 @@ commonLabels:
   kustomize.component: basic-auth
 namespace: kubeflow
 images:
-- name: gcr.io/kubeflow-images-public/kflogin-ui
-  newName: gcr.io/kubeflow-images-public/kflogin-ui
+- name: gcr.azk8s.cn/kubeflow-images-public/kflogin-ui
+  newName: gcr.azk8s.cn/kubeflow-images-public/kflogin-ui
   newTag: v0.5.0
-- name: gcr.io/kubeflow-images-public/gatekeeper
-  newName: gcr.io/kubeflow-images-public/gatekeeper
+- name: gcr.azk8s.cn/kubeflow-images-public/gatekeeper
+  newName: gcr.azk8s.cn/kubeflow-images-public/gatekeeper
   newTag: v0.5.0
 generatorOptions:
   disableNameSuffixHash: true

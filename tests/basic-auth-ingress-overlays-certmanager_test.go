@@ -34,7 +34,7 @@ spec:
           value: $(hostname)
         - name: INGRESS_NAME
           value: $(ingressName)
-        image: gcr.io/kubeflow-images-public/ingress-setup:latest
+        image: gcr.azk8s.cn/kubeflow-images-public/ingress-setup:latest
         name: bootstrap
         volumeMounts:
         - mountPath: /var/ingress-config/
@@ -79,8 +79,8 @@ namespace: kubeflow
 commonLabels:
   kustomize.component: basic-auth-ingress
 images:
-- name: gcr.io/kubeflow-images-public/ingress-setup
-  newName: gcr.io/kubeflow-images-public/ingress-setup
+- name: gcr.azk8s.cn/kubeflow-images-public/ingress-setup
+  newName: gcr.azk8s.cn/kubeflow-images-public/ingress-setup
   newTag: latest
 `)
 	th.writeF("/manifests/gcp/basic-auth-ingress/base/backend-config.yaml", `
@@ -274,7 +274,7 @@ spec:
       - env:
         - name: PORT
           value: "8081"
-        image: gcr.io/cloud-solutions-group/esp-sample-app:1.0.0
+        image: gcr.azk8s.cn/cloud-solutions-group/esp-sample-app:1.0.0
         name: app
         ports:
         - containerPort: 8081
@@ -398,7 +398,7 @@ spec:
           value: /whoami
         - name: INGRESS_NAME
           value: $(ingressName)
-        image: gcr.io/kubeflow-images-public/ingress-setup:latest
+        image: gcr.azk8s.cn/kubeflow-images-public/ingress-setup:latest
         name: backend-updater
         volumeMounts:
         - mountPath: /var/envoy-config/
@@ -479,11 +479,11 @@ namespace: kubeflow
 commonLabels:
   kustomize.component: basic-auth-ingress
 images:
-- name: gcr.io/kubeflow-images-public/ingress-setup
-  newName: gcr.io/kubeflow-images-public/ingress-setup
+- name: gcr.azk8s.cn/kubeflow-images-public/ingress-setup
+  newName: gcr.azk8s.cn/kubeflow-images-public/ingress-setup
   newTag: latest
-- name: gcr.io/cloud-solutions-group/esp-sample-app
-  newName: gcr.io/cloud-solutions-group/esp-sample-app
+- name: gcr.azk8s.cn/cloud-solutions-group/esp-sample-app
+  newName: gcr.azk8s.cn/cloud-solutions-group/esp-sample-app
   newTag: 1.0.0
 configMapGenerator:
 - name: basic-auth-ingress-parameters

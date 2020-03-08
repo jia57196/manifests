@@ -16,25 +16,25 @@ spec:
     spec:
       serviceAccountName: katib-controller
       containers:
-      - name: katib-controller
-        image: gcr.io/kubeflow-images-public/katib/v1alpha3/katib-controller
-        imagePullPolicy: IfNotPresent
-        command: ["./katib-controller"]
-        ports:
-        - containerPort: 443
-          name: webhook
-          protocol: TCP
-        env:
-        - name: KATIB_CORE_NAMESPACE
-          valueFrom:
-            fieldRef:
-              fieldPath: metadata.namespace
-        volumeMounts:
-        - mountPath: /tmp/cert
-          name: cert
-          readOnly: true
+        - name: katib-controller
+          image: gcr.azk8s.cn/kubeflow-images-public/katib/v1alpha3/katib-controller
+          imagePullPolicy: IfNotPresent
+          command: ["./katib-controller"]
+          ports:
+            - containerPort: 443
+              name: webhook
+              protocol: TCP
+          env:
+            - name: KATIB_CORE_NAMESPACE
+              valueFrom:
+                fieldRef:
+                  fieldPath: metadata.namespace
+          volumeMounts:
+            - mountPath: /tmp/cert
+              name: cert
+              readOnly: true
       volumes:
-      - name: cert
-        secret:
-          defaultMode: 420
-          secretName: katib-controller
+        - name: cert
+          secret:
+            defaultMode: 420
+            secretName: katib-controller

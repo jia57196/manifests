@@ -14,8 +14,8 @@ spec:
         app: ml-pipeline-visualizationserver
     spec:
       containers:
-      - image: gcr.io/ml-pipeline/visualization-server
-        imagePullPolicy: IfNotPresent
-        name: ml-pipeline-visualizationserver
-        ports:
-        - containerPort: 8888
+        - image: gcr.azk8s.cn/ml-pipeline/visualization-server
+          imagePullPolicy: IfNotPresent
+          name: ml-pipeline-visualizationserver
+          ports:
+            - containerPort: 8888

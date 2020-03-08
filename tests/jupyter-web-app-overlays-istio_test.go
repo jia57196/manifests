@@ -133,13 +133,13 @@ data:
       image:
         # The container Image for the user's Jupyter Notebook
         # If readonly, this value must be a member of the list below
-        value: gcr.io/kubeflow-images-public/tensorflow-1.14.0-notebook-cpu:v-base-ef41372-1177829795472347138
+        value: gcr.azk8s.cn/kubeflow-images-public/tensorflow-1.14.0-notebook-cpu:v-base-ef41372-1177829795472347138
         # The list of available standard container Images
         options:
-          - gcr.io/kubeflow-images-public/tensorflow-1.14.0-notebook-cpu:v0.7.0
-          - gcr.io/kubeflow-images-public/tensorflow-1.14.0-notebook-gpu:v0.7.0
-          - gcr.io/kubeflow-images-public/tensorflow-2.0.0a0-notebook-cpu:v0.7.0
-          - gcr.io/kubeflow-images-public/tensorflow-2.0.0a0-notebook-gpu:v0.7.0
+          - gcr.azk8s.cn/kubeflow-images-public/tensorflow-1.14.0-notebook-cpu:v0.7.0
+          - gcr.azk8s.cn/kubeflow-images-public/tensorflow-1.14.0-notebook-gpu:v0.7.0
+          - gcr.azk8s.cn/kubeflow-images-public/tensorflow-2.0.0a0-notebook-cpu:v0.7.0
+          - gcr.azk8s.cn/kubeflow-images-public/tensorflow-2.0.0a0-notebook-gpu:v0.7.0
         # By default, custom container Images are allowed
         # Uncomment the following line to only enable standard container Images
         readOnly: false
@@ -263,7 +263,7 @@ spec:
           value: $(userid-header)
         - name: USERID_PREFIX
           value: $(userid-prefix)
-        image: gcr.io/kubeflow-images-public/jupyter-web-app:v0.5.0
+        image: gcr.azk8s.cn/kubeflow-images-public/jupyter-web-app:v0.5.0
         imagePullPolicy: $(policy)
         name: jupyter-web-app
         ports:
@@ -394,8 +394,8 @@ commonLabels:
   app: jupyter-web-app
   kustomize.component: jupyter-web-app
 images:
-- name: gcr.io/kubeflow-images-public/jupyter-web-app
-  newName: gcr.io/kubeflow-images-public/jupyter-web-app
+- name: gcr.azk8s.cn/kubeflow-images-public/jupyter-web-app
+  newName: gcr.azk8s.cn/kubeflow-images-public/jupyter-web-app
   newTag: 9419d4d
 configMapGenerator:
 - env: params.env

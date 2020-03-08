@@ -258,7 +258,7 @@ spec:
       - command:
         - sh
         - /var/webhook-config/create_ca.sh
-        image: gcr.io/kubeflow-images-public/ingress-setup:latest
+        image: gcr.azk8s.cn/kubeflow-images-public/ingress-setup:latest
         name: bootstrap
         volumeMounts:
         - mountPath: /var/webhook-config/
@@ -294,8 +294,8 @@ commonLabels:
   kustomize.component: admission-webhook-bootstrap
 namePrefix: admission-webhook-bootstrap-
 images:
-- name: gcr.io/kubeflow-images-public/ingress-setup
-  newName: gcr.io/kubeflow-images-public/ingress-setup
+- name: gcr.azk8s.cn/kubeflow-images-public/ingress-setup
+  newName: gcr.azk8s.cn/kubeflow-images-public/ingress-setup
   newTag: latest
 generatorOptions:
   disableNameSuffixHash: true

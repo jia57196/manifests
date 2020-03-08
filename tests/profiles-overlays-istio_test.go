@@ -246,7 +246,7 @@ spec:
         - $(userid-prefix)
         - "-workload-identity"
         - $(gcp-sa)
-        image: gcr.io/kubeflow-images-public/profile-controller:v20190619-v0-219-gbd3daa8c-dirty-1ced0e
+        image: gcr.azk8s.cn/kubeflow-images-public/profile-controller:v20190619-v0-219-gbd3daa8c-dirty-1ced0e
         imagePullPolicy: Always
         name: manager
       - command:
@@ -258,7 +258,7 @@ spec:
         - $(userid-header)
         - "-userid-prefix"
         - $(userid-prefix)
-        image: gcr.io/kubeflow-images-public/kfam:v20190612-v0-170-ga06cdb79-dirty-a33ee4
+        image: gcr.azk8s.cn/kubeflow-images-public/kfam:v20190612-v0-170-ga06cdb79-dirty-a33ee4
         imagePullPolicy: Always
         name: kfam
       serviceAccountName: controller-service-account
@@ -316,9 +316,9 @@ configMapGenerator:
 - name: profiles-parameters
   env: params.env
 images:
-- name: gcr.io/kubeflow-images-public/profile-controller
+- name: gcr.azk8s.cn/kubeflow-images-public/profile-controller
   digest: sha256:e601b2226e534a4f8e0722cfc44ae4a919a90265c4c6c9e7a7a55fcb57032f25
-- name: gcr.io/kubeflow-images-public/kfam
+- name: gcr.azk8s.cn/kubeflow-images-public/kfam
   digest: sha256:3b0d4be7e59a3fa5ed1d80dccc832312caa94f3b2d36682524d3afc4e45164f0
 vars:
 - name: admin

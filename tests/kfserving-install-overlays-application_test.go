@@ -343,21 +343,21 @@ data:
             ]
         },
         "sklearn": {
-            "image": "gcr.io/kfserving/sklearnserver",
+            "image": "gcr.azk8s.cn/kfserving/sklearnserver",
             "defaultImageVersion": "0.2.2",
             "allowedImageVersions": [
                "0.2.2"
             ]
         },
         "xgboost": {
-            "image": "gcr.io/kfserving/xgbserver",
+            "image": "gcr.azk8s.cn/kfserving/xgbserver",
             "defaultImageVersion": "0.2.2",
             "allowedImageVersions": [
                "0.2.2"
             ]
         },
         "pytorch": {
-            "image": "gcr.io/kfserving/pytorchserver",
+            "image": "gcr.azk8s.cn/kfserving/pytorchserver",
             "defaultImageVersion": "0.2.2",
             "allowedImageVersions": [
                "0.2.2"
@@ -377,7 +377,7 @@ data:
   explainers: |-
     {
         "alibi": {
-            "image" : "gcr.io/kfserving/alibi-explainer",
+            "image" : "gcr.azk8s.cn/kfserving/alibi-explainer",
             "defaultImageVersion": "0.2.2",
             "allowedImageVersions": [
                "0.2.2"
@@ -386,7 +386,7 @@ data:
     }
   storageInitializer: |-
     {
-        "image" : "gcr.io/kfserving/storage-initializer:0.2.2",
+        "image" : "gcr.azk8s.cn/kfserving/storage-initializer:0.2.2",
         "memoryRequest": "100Mi",
         "memoryLimit": "1Gi",
         "cpuRequest": "100m",
@@ -409,7 +409,7 @@ data:
     }
   logger: |-
     {
-        "image" : "gcr.io/kfserving/logger:0.2.2",
+        "image" : "gcr.azk8s.cn/kfserving/logger:0.2.2",
         "memoryRequest": "100Mi",
         "memoryLimit": "1Gi",
         "cpuRequest": "100m",
@@ -448,7 +448,7 @@ spec:
         - --upstream=http://127.0.0.1:8080/
         - --logtostderr=true
         - --v=10
-        image: gcr.io/kubebuilder/kube-rbac-proxy:v0.4.0
+        image: gcr.azk8s.cn/kubebuilder/kube-rbac-proxy:v0.4.0
         name: kube-rbac-proxy
         ports:
         - containerPort: 8443
@@ -536,7 +536,7 @@ varReference:
   kind: ConfigMap
 `)
 	th.writeF("/manifests/kfserving/kfserving-install/base/params.env", `
-registry=gcr.io/kfserving
+registry=gcr.azk8s.cn/kfserving
 `)
 	th.writeK("/manifests/kfserving/kfserving-install/base", `
 apiVersion: kustomize.config.k8s.io/v1beta1
@@ -565,8 +565,8 @@ vars:
 configurations:
 - params.yaml
 images:
-- name: gcr.io/kubebuilder/kube-rbac-proxy
-  newName: gcr.io/kubebuilder/kube-rbac-proxy
+- name: gcr.azk8s.cn/kubebuilder/kube-rbac-proxy
+  newName: gcr.azk8s.cn/kubebuilder/kube-rbac-proxy
   newTag: v0.4.0
 - name: $(registry)/kfserving-controller
   newName: $(registry)/kfserving-controller

@@ -10,20 +10,20 @@ commonLabels:
 # Images modify the tags for images without
 # creating patches.
 images:
-- name: gcr.io/spark-operator/spark-operator
-  newTag: v2.4.0-v1beta1-0.8.2
+  - name: gcr.azk8s.cn/spark-operator/spark-operator
+    newTag: v2.4.0-v1beta1-0.8.2
 
-# Value of this field is prepended to the
-# names of all resources
-  newName: gcr.io/spark-operator/spark-operator
+    # Value of this field is prepended to the
+    # names of all resources
+    newName: gcr.azk8s.cn/spark-operator/spark-operator
 namePrefix: spark-operator
 
 # List of resource files that kustomize reads, modifies
 # and emits as a YAML string
 resources:
-- spark-sa.yaml
-- cr-clusterrole.yaml
-- crb.yaml
-- crd-cleanup-job.yaml
-- deploy.yaml
-- operator-sa.yaml
+  - spark-sa.yaml
+  - cr-clusterrole.yaml
+  - crb.yaml
+  - crd-cleanup-job.yaml
+  - deploy.yaml
+  - operator-sa.yaml

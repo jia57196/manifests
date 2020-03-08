@@ -138,7 +138,7 @@ spec:
         app: centraldashboard
     spec:
       containers:
-      - image: gcr.io/kubeflow-images-public/centraldashboard
+      - image: gcr.azk8s.cn/kubeflow-images-public/centraldashboard
         imagePullPolicy: IfNotPresent
         name: centraldashboard
         ports:
@@ -257,8 +257,8 @@ namespace: kubeflow
 commonLabels:
   kustomize.component: centraldashboard
 images:
-- name: gcr.io/kubeflow-images-public/centraldashboard
-  newName: gcr.io/kubeflow-images-public/centraldashboard
+- name: gcr.azk8s.cn/kubeflow-images-public/centraldashboard
+  newName: gcr.azk8s.cn/kubeflow-images-public/centraldashboard
   digest: sha256:4299297b8390599854aa8f77e9eb717db684b32ca9a94a0ab0e73f3f73e5d8b5
 configMapGenerator:
 - name: parameters

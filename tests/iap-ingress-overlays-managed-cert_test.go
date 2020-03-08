@@ -353,7 +353,7 @@ spec:
       - env:
         - name: PORT
           value: "8081"
-        image: gcr.io/cloud-solutions-group/esp-sample-app:1.0.0
+        image: gcr.azk8s.cn/cloud-solutions-group/esp-sample-app:1.0.0
         name: app
         ports:
         - containerPort: 8081
@@ -393,7 +393,7 @@ spec:
           value: http://localhost:8001
         - name: USE_ISTIO
           value: "true"
-        image: gcr.io/kubeflow-images-public/ingress-setup:latest
+        image: gcr.azk8s.cn/kubeflow-images-public/ingress-setup:latest
         name: iap
         volumeMounts:
         - mountPath: /var/envoy-config/
@@ -501,7 +501,7 @@ spec:
           value: $(ingressName)
         - name: USE_ISTIO
           value: "true"
-        image: gcr.io/kubeflow-images-public/ingress-setup:latest
+        image: gcr.azk8s.cn/kubeflow-images-public/ingress-setup:latest
         name: backend-updater
         volumeMounts:
         - mountPath: /var/envoy-config/
@@ -590,14 +590,14 @@ namespace: kubeflow
 commonLabels:
   kustomize.component: iap-ingress
 images:
-- name: gcr.io/kubeflow-images-public/envoy
-  newName: gcr.io/kubeflow-images-public/envoy
+- name: gcr.azk8s.cn/kubeflow-images-public/envoy
+  newName: gcr.azk8s.cn/kubeflow-images-public/envoy
   newTag: v20180309-0fb4886b463698702b6a08955045731903a18738
-- name: gcr.io/kubeflow-images-public/ingress-setup
-  newName: gcr.io/kubeflow-images-public/ingress-setup
+- name: gcr.azk8s.cn/kubeflow-images-public/ingress-setup
+  newName: gcr.azk8s.cn/kubeflow-images-public/ingress-setup
   newTag: latest
-- name: gcr.io/cloud-solutions-group/esp-sample-app
-  newName: gcr.io/cloud-solutions-group/esp-sample-app
+- name: gcr.azk8s.cn/cloud-solutions-group/esp-sample-app
+  newName: gcr.azk8s.cn/cloud-solutions-group/esp-sample-app
   newTag: 1.0.0
 configMapGenerator:
 - name: parameters

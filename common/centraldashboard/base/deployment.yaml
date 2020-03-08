@@ -15,17 +15,17 @@ spec:
         app: centraldashboard
     spec:
       containers:
-      - image: gcr.io/kubeflow-images-public/centraldashboard
-        imagePullPolicy: IfNotPresent
-        name: centraldashboard
-        ports:
-        - containerPort: 8082
-          protocol: TCP
-        env:
-        - name: USERID_HEADER
-          value: $(userid-header)
-        - name: USERID_PREFIX
-          value: $(userid-prefix)
-        - name: PROFILES_KFAM_SERVICE_HOST
-          value: profiles-kfam.kubeflow
+        - image: gcr.azk8s.cn/kubeflow-images-public/centraldashboard
+          imagePullPolicy: IfNotPresent
+          name: centraldashboard
+          ports:
+            - containerPort: 8082
+              protocol: TCP
+          env:
+            - name: USERID_HEADER
+              value: $(userid-header)
+            - name: USERID_PREFIX
+              value: $(userid-prefix)
+            - name: PROFILES_KFAM_SERVICE_HOST
+              value: profiles-kfam.kubeflow
       serviceAccountName: centraldashboard
